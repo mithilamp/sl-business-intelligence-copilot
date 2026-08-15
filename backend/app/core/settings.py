@@ -11,6 +11,9 @@ class Settings(BaseSettings):
     RAW_DATA_DIR: Path = DATA_DIR / "raw"
     EMBEDDINGS_DIR: Path = DATA_DIR / "embeddings"
     CHUNK_DIR: Path = DATA_DIR / "chunks"
+    EMBEDDING_MODEL: str = "text-embedding-3-small"
+    DATABASE_URL: str 
+    OPENAI_API_KEY: str
 
     model_config = SettingsConfigDict(
         env_file=".env",
