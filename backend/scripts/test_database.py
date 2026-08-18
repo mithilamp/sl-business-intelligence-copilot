@@ -1,15 +1,13 @@
-from sqlalchemy import text
-
 from app.database.postgres import Postgres
+from app.database.models import Chunk
 
 postgres = Postgres()
 
-session = postgres.get_session()
+with postgres.get_session() as session:
 
-result = session.execute(
-    text("SELECT version();")
-)
+    chunk = session.query(Chunk).first()
 
-print(result.scalar())
-
-session.close()
+    print("Chunk:", chunk.chunk_index)
+    print("Document:", chunk.document.title)
+    print("Source:", chunk.document.source)
+    print("Filename:", chunk.document.filename)

@@ -5,7 +5,7 @@ from app.llm.base import BaseLLM
 from app.llm.openai_llm import OpenAILLM
 from app.rag.context_builder import ContextBuilder
 from app.prompts.rag import RAG_SYSTEM_PROMPT
-from app.rag.models import RAGResults
+from app.rag.models import RAGResults, Source
 from app.database.models import Chunk
 
 
@@ -46,7 +46,24 @@ class RAGPipeline:
             user_prompt=user_prompt,
         )
 
-        sources = sorted({chunk.filename for chunk in chunks})
+
+        sources = []
+        seen_documents = set()
+
+        for chunk in chunks:
+            document = chunk.document
+
+            if document.id not in seen_documents:
+                sources.append(
+                    Source(
+                        title=document.title,
+                        filename=document.filename,
+                        source=document.source,
+                        document_url=document.document_url,
+                    )
+                )
+                seen_documents.add(document.id)
+
         return RAGResults(
             question=question,
             answer=answer,

@@ -1,7 +1,14 @@
 export interface AskResponse {
   question: string;
   answer: string;
-  sources: string[];
+  sources: Source[];
+}
+
+export interface Source {
+  title: string;
+  filename: string;
+  source: string;
+  document_url: string | null;
 }
 
 export interface BusinessRecommendation {
@@ -19,5 +26,5 @@ export interface BusinessRecommendation {
 export interface BusinessAdviceResponse {
   question: string;
   recommendation: BusinessRecommendation;
-  sources: string[];
+  sources: Source[];
 }

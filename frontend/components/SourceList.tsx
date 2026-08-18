@@ -1,29 +1,62 @@
+import { SourceResponse } from "@/types/rag";
+
 interface SourceListProps {
-    sources: string[];
+  sources: SourceResponse[];
 }
 
 export default function SourceList({
-    sources,
+  sources,
 }: SourceListProps) {
 
-    return (
-        <div className="rounded border p-6">
+  if (!sources.length) {
+    return null;
+  }
 
-            <h2 className="mb-4 text-xl font-semibold">
-                Sources
-            </h2>
+  return (
+    <div className="rounded border p-6">
 
-            <ul className="list-disc pl-5">
+      <h2 className="mb-4 text-xl font-semibold">
+        Supporting Sources
+      </h2>
 
-                {sources.map((source) => (
-                    <li key={source} className="flex items-center gap-2">
-                        <span>📄</span>
-                        <span>{source}</span>
-                    </li>
-                ))}
+      <div className="space-y-4">
 
-            </ul>
+        {sources.map((source) => (
 
-        </div>
-    );
+          <div
+            key={`${source.filename}-${source.title}`}
+            className="rounded border p-4"
+          >
+
+            {source.document_url ? (
+              <a
+                href={`http://localhost:8000${source.document_url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline hover:no-underline"
+              >
+                📄 {source.title}
+              </a>
+            ) : (
+              <p className="font-semibold">
+                📄 {source.title}
+              </p>
+            )}
+
+            <p className="mt-1 text-sm text-gray-600">
+              {source.source}
+            </p>
+
+            <p className="text-sm text-gray-500">
+              {source.filename}
+            </p>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+  );
 }

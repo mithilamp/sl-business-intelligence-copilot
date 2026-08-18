@@ -10,9 +10,11 @@ class ContextBuilder:
         parts = []
 
         for chunk in chunks:
+            document = chunk.document
             parts.append(
-                f"""Source: {chunk.source}
-                File: {chunk.filename}
+                f"""Source: {document.source}
+                File: {document.filename}
+                Title: {document.title}
                 Chunk: {chunk.chunk_index}
 
                 {chunk.text}"""

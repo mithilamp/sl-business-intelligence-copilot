@@ -24,6 +24,16 @@ class IngestionPipeline:
 
         logger.info(f"Ingesting {pdf_path.name} from source {source.name}")
 
+        document = self.store.get_or_create_document(
+            title=pdf_path.stem.replace("_", " ").title(),
+            filename=pdf_path.name,
+            source=source.name,
+        )
+
+        if self.store.has_chunks(document.id):
+            logger.info(f"Document already has chunks.Skipping ingestion: {pdf_path.name}")
+            return
+
         text = self.parser.parse(pdf_path)
 
         chunks = self.chunker.chunk(text)
@@ -32,8 +42,7 @@ class IngestionPipeline:
             embedding = self.embedder.embed(chunk)
 
             self.store.add(
-                source=source.name,
-                filename=pdf_path.name,
+                document_id=document.id,
                 chunk_index=index,
                 text=chunk,
                 embedding=embedding,
