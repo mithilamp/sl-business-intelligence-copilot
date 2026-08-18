@@ -6,6 +6,7 @@ from app.llm.openai_llm import OpenAILLM
 from app.rag.context_builder import ContextBuilder
 from app.prompts.rag import RAG_SYSTEM_PROMPT
 from app.rag.models import RAGResults
+from app.database.models import Chunk
 
 
 class RAGPipeline:
@@ -21,15 +22,20 @@ class RAGPipeline:
         self.llm = llm or OpenAILLM()
         self.context_builder = context_builder or ContextBuilder()
 
-    def ask(self, question: str) -> str:
+    def retrieve(self, question: str) -> tuple[list[Chunk], str]:
+        """
+        Retrieve relevant chunks from the vector store based on the question.
+        """
+        embedding = self.embedder.embed(question)
+        chunks = self.store.search(embedding=embedding, limit=5)
+        context = self.context_builder.build(chunks)
+        return chunks, context
+
+    def ask(self, question: str) -> RAGResults:
         """
         Ask a question to the RAG pipeline and get an answer.
         """
-        embedding = self.embedder.embed(question)
-
-        chunks = self.store.search(embedding=embedding, limit=5)
-
-        context = self.context_builder.build(chunks)
+        chunks, context = self.retrieve(question)
 
         user_prompt = f"""
             Context: {context}

@@ -6,15 +6,15 @@ import QuestionForm from "@/components/QuestionForm";
 import AnswerCard from "@/components/AnswerCard";
 import SourceList from "@/components/SourceList";
 
-import { ask } from "@/services/api";
-import { AskResponse } from "@/types/rag";
+import { getBusinessAdvice } from "@/services/api";
+import { BusinessAdviceResponse } from "@/types/rag";
 
 export default function Home() {
 
     const [loading, setLoading] = useState(false);
 
     const [result, setResult] =
-        useState<AskResponse | null>(null);
+        useState<BusinessAdviceResponse | null>(null);
 
     async function handleQuestion(
         question: string
@@ -24,7 +24,7 @@ export default function Home() {
 
         try {
 
-            const response = await ask(question);
+            const response = await getBusinessAdvice(question);
 
             setResult(response);
 
