@@ -3,64 +3,150 @@
 import { useState } from "react";
 
 import QuestionForm from "@/components/QuestionForm";
-import AnswerCard from "@/components/AnswerCard";
+import RAGAnswerCard from "@/components/RAGAnswerCard";
 import SourceList from "@/components/SourceList";
+import BusinessAdviceCard from "@/components/BusinessAdviceCard";
 
-import { getBusinessAdvice } from "@/services/api";
-import { BusinessAdviceResponse } from "@/types/rag";
+import {
+  ask,
+  getBusinessAdvice,
+} from "@/services/api";
+
+import {
+  AskResponse,
+  BusinessAdviceResponse,
+} from "@/types/rag";
+
+type Mode = "ask" | "business";
 
 export default function Home() {
 
-    const [loading, setLoading] = useState(false);
+  const [mode, setMode] = useState<Mode>("ask");
 
-    const [result, setResult] =
-        useState<BusinessAdviceResponse | null>(null);
+  const [loading, setLoading] = useState(false);
 
-    async function handleQuestion(
-        question: string
-    ) {
+  const [answer, setAnswer] =
+    useState<AskResponse | null>(null);
 
-        setLoading(true);
+  const [businessAdvice, setBusinessAdvice] =
+    useState<BusinessAdviceResponse | null>(null);
 
-        try {
+  async function handleQuestion(question: string) {
 
-            const response = await getBusinessAdvice(question);
+    setLoading(true);
 
-            setResult(response);
+    setAnswer(null);
+    setBusinessAdvice(null);
 
-        } finally {
+    try {
 
-            setLoading(false);
+      if (mode === "ask") {
 
-        }
+        const response = await ask(question);
+
+        setAnswer(response);
+
+      } else {
+
+        const response =
+          await getBusinessAdvice(question);
+
+        setBusinessAdvice(response);
+
+      }
+
+    } finally {
+
+      setLoading(false);
+
     }
+  }
 
-    return (
-        <main className="mx-auto max-w-4xl p-8">
+  return (
+    <main className="mx-auto max-w-5xl p-8">
 
-            <h1 className="mb-8 text-3xl font-bold">
-                🇱🇰 SL Business Intelligence Copilot
-            </h1>
+      <h1 className="mb-2 text-3xl font-bold">
+        🇱🇰 SL Business Intelligence Copilot
+      </h1>
 
-            <QuestionForm
-                onSubmit={handleQuestion}
-                loading={loading}
-            />
+      <p className="mb-8 text-gray-600">
+        Ask questions about Sri Lankan business and
+        economic information.
+      </p>
 
-            {result && (
-                <div className="mt-8 space-y-6">
 
-                    <AnswerCard
-                        result={result}
-                    />
+      {/* Mode selector */}
 
-                    <SourceList
-                        sources={result.sources}
-                    />
+      <div className="mb-6 flex gap-3">
 
-                </div>
-            )}
+        <button
+          onClick={() => setMode("ask")}
+          className={`rounded px-5 py-2 ${
+            mode === "ask"
+              ? "bg-black text-white"
+              : "border"
+          }`}
+        >
+          Ask a Question
+        </button>
 
-        </main>
-    );
+        <button
+          onClick={() => setMode("business")}
+          className={`rounded px-5 py-2 ${
+            mode === "business"
+              ? "bg-black text-white"
+              : "border"
+          }`}
+        >
+          Business Advisor
+        </button>
+
+      </div>
+
+
+      {/* Question form */}
+
+      <QuestionForm
+        onSubmit={handleQuestion}
+        loading={loading}
+      />
+
+
+      {/* RAG answer */}
+
+      {answer && mode === "ask" && (
+
+        <div className="mt-8 space-y-6">
+
+          <RAGAnswerCard
+            result={answer}
+          />
+
+          <SourceList
+            sources={answer.sources}
+          />
+
+        </div>
+
+      )}
+
+
+      {/* Business advice */}
+
+      {businessAdvice && mode === "business" && (
+        <div className="mt-8 space-y-6">
+
+          <BusinessAdviceCard
+            result={businessAdvice}
+          />
+
+          <SourceList
+            sources={businessAdvice.sources}
+          />
+
+        </div>
+      )}
+
+    </main>
+  );
 }

@@ -1,14 +1,14 @@
-import { SourceResponse } from "@/types/rag";
+import { Source } from "@/types/rag";
 
 interface SourceListProps {
-  sources: SourceResponse[];
+  sources: Source[];
 }
 
 export default function SourceList({
   sources,
 }: SourceListProps) {
 
-  if (!sources.length) {
+  if (sources.length === 0) {
     return null;
   }
 
@@ -16,15 +16,15 @@ export default function SourceList({
     <div className="rounded border p-6">
 
       <h2 className="mb-4 text-xl font-semibold">
-        Supporting Sources
+        Data Sources
       </h2>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
 
         {sources.map((source) => (
 
           <div
-            key={`${source.filename}-${source.title}`}
+            key={source.filename}
             className="rounded border p-4"
           >
 
@@ -33,22 +33,22 @@ export default function SourceList({
                 href={`http://localhost:8000${source.document_url}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold underline hover:no-underline"
+                className="font-medium underline"
               >
-                📄 {source.title}
+                {source.title}
               </a>
             ) : (
-              <p className="font-semibold">
-                📄 {source.title}
+              <p className="font-medium">
+                {source.title}
               </p>
             )}
 
-            <p className="mt-1 text-sm text-gray-600">
-              {source.source}
+            <p className="text-sm text-gray-500">
+              {source.filename}
             </p>
 
             <p className="text-sm text-gray-500">
-              {source.filename}
+              {source.source}
             </p>
 
           </div>
