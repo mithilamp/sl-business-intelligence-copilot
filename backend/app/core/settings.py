@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     EMBEDDINGS_DIR: Path = DATA_DIR / "embeddings"
     CHUNK_DIR: Path = DATA_DIR / "chunks"
     EMBEDDING_MODEL: str = "text-embedding-3-small"
+    RERANKER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L-12-v2"
     DATABASE_URL: str 
     OPENAI_API_KEY: str
 
