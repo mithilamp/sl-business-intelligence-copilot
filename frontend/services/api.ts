@@ -3,13 +3,13 @@ import {
   BusinessAdviceResponse,
 } from "@/types/rag";
 
-export async function ask(question: string): Promise<AskResponse> {
+export async function ask(question: string, conversationId?: number | null): Promise<AskResponse> {
   const response = await fetch("http://localhost:8000/ask", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ question }),
+    body: JSON.stringify({ question, conversation_id: conversationId ?? null }),
   });
 
   if (!response.ok) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import QuestionForm from "@/components/QuestionForm";
 import RAGAnswerCard from "@/components/RAGAnswerCard";
@@ -31,6 +31,23 @@ export default function Home() {
   const [businessAdvice, setBusinessAdvice] =
     useState<BusinessAdviceResponse | null>(null);
 
+  const [conversationId, setConversationId] =
+    useState<number | null>(null);
+
+
+  useEffect(() => {
+
+    const savedConversationId =
+      localStorage.getItem("conversation_id");
+
+    if (savedConversationId) {
+      setConversationId(
+        Number(savedConversationId)
+      );
+    }
+
+  }, []);
+
   async function handleQuestion(question: string) {
 
     setLoading(true);
@@ -42,8 +59,12 @@ export default function Home() {
 
       if (mode === "ask") {
 
-        const response = await ask(question);
+        const response = await ask(question, conversationId);
 
+        setConversationId(response.conversation_id)
+
+        localStorage.setItem("conversation_id",String(response.conversation_id))
+        
         setAnswer(response);
 
       } else {
@@ -62,6 +83,19 @@ export default function Home() {
     }
   }
 
+  function newChat() {
+
+    setConversationId(null);
+
+    localStorage.removeItem(
+      "conversation_id"
+    );
+
+    setAnswer(null);
+
+    setBusinessAdvice(null);
+  }
+
   return (
     <main className="mx-auto max-w-5xl p-8">
 
@@ -78,6 +112,12 @@ export default function Home() {
       {/* Mode selector */}
 
       <div className="mb-6 flex gap-3">
+
+        <button
+          onClick={newChat}
+          className="rounded border px-5 py-2">
+          New Chat
+        </button>
 
         <button
           onClick={() => setMode("ask")}

@@ -14,6 +14,11 @@ class OpenAILLM(BaseLLM):
         name="LLM",
         run_type="llm",
     )
+
+    @traceable(
+    name="LLM Generation",
+    run_type="llm",
+    )
     def generate(self, system_prompt: str, user_prompt: str) -> str:
         response = self.client.chat.completions.create(
             model="gpt-5",

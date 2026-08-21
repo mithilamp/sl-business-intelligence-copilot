@@ -2,6 +2,7 @@ export interface AskResponse {
   question: string;
   answer: string;
   sources: Source[];
+  conversation_id: number;
 }
 
 export interface Source {

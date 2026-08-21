@@ -8,6 +8,10 @@ from app.prompts.rag import RAG_SYSTEM_PROMPT
 from app.rag.models import RAGResults, Source
 from app.database.models import Chunk
 
+from app.memory.memory import ConversationMemory
+from app.memory.context import MemoryContext
+from app.memory.contextualizer import QuestionContextualizer
+
 from app.rag.retriever import Retriever
 from app.reranking.cross_encoder import CrossEncoderReranker
 from app.core import langsmith
@@ -23,6 +27,8 @@ class RAGPipeline:
             context_builder: ContextBuilder | None = None,
             retriever: Retriever | None = None,
             reranker: CrossEncoderReranker | None = None,
+            memory: ConversationMemory | None = None,
+            contextualizer: QuestionContextualizer | None = None,
     ):
 
         self.embedder = embedder or OpenAIEmbedder()
@@ -39,6 +45,12 @@ class RAGPipeline:
         )
 
         self.reranker = reranker or CrossEncoderReranker()
+
+        self.memory = memory or ConversationMemory()
+
+        self.memory_context = MemoryContext(self.memory)
+        
+        self.contextualizer = contextualizer or QuestionContextualizer(self.llm)
 
     @traceable(
         name="Retrieve Documents",
@@ -72,15 +84,45 @@ class RAGPipeline:
         name="RAG Pipeline",
         run_type="chain",
     )
-    def ask(self, question: str) -> RAGResults:
+    def ask(self, question: str, conversation_id: int | None = None) -> RAGResults:
         """
         Ask a question to the RAG pipeline and get an answer.
-        """
-        chunks, context = self.retrieve(question)
+        """ 
+
+        memory_context = ""
+
+        contextualized_question = question
+
+        # --------------------------------------------------
+        # Conversation memory
+        # --------------------------------------------------
+        if conversation_id is not None:
+
+            memory_context = self.memory_context.build(
+                conversation_id=conversation_id,
+            )
+
+        if memory_context.strip():
+            print("Conversation ID:", conversation_id)
+            print("Memory context:", memory_context)
+            contextualized_question = (
+                self.contextualizer.contextualize(
+                    question=question,
+                    history=memory_context,
+                )
+            )
+
+        # --------------------------------------------------
+        # RAG retrieval + reranking
+        # --------------------------------------------------
+        chunks, context = self.retrieve(contextualized_question)
 
         user_prompt = f"""
-            Context: {context}
-            Question: {question}
+            Conversation Context: {memory_context}
+
+            Retrieved Context:{context}
+
+            Question: {contextualized_question}
         """
         answer = self.llm.generate(
             system_prompt=RAG_SYSTEM_PROMPT,
@@ -104,6 +146,23 @@ class RAGPipeline:
                     )
                 )
                 seen_documents.add(document.id)
+
+        # --------------------------------------------------
+        # Save conversation
+        # --------------------------------------------------
+        if conversation_id is not None:
+
+            self.memory.add_message(
+                conversation_id=conversation_id,
+                role="user",
+                content=question,
+            )
+
+            self.memory.add_message(
+                conversation_id=conversation_id,
+                role="assistant",
+                content=answer,
+            )
 
         return RAGResults(
             question=question,

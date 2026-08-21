@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 
 class QuestionRequest(BaseModel):
     question: str
+    conversation_id: int | None = None
 
 class SourceResponse(BaseModel):
     title: str
@@ -14,6 +15,7 @@ class QuestionResponse(BaseModel):
     question: str
     answer: str
     sources: list[SourceResponse]
+    conversation_id: int
 
 class BusinessAdviceRequest(BaseModel):
     question: str = Field(min_length=1)

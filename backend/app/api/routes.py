@@ -14,7 +14,14 @@ pipeline = RAGPipeline()
 )
 
 def ask(request: QuestionRequest):
-    result = pipeline.ask(request.question)
+
+    conversation_id = request.conversation_id
+
+    if conversation_id is None:
+        conversation = pipeline.memory.create_conversation()
+        conversation_id = conversation.id
+
+    result = pipeline.ask(request.question, conversation_id=request.conversation_id)
     sources = [
         SourceResponse(
             title=source.title,
@@ -28,7 +35,8 @@ def ask(request: QuestionRequest):
     return QuestionResponse(
         question=result.question,
         answer=result.answer,
-        sources=sources
+        sources=sources,
+        conversation_id=conversation_id
     )
 
 @router.post(
