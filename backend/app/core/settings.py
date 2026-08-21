@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     DATABASE_URL: str 
     OPENAI_API_KEY: str
 
+    LANGSMITH_API_KEY: str | None = None
+    LANGSMITH_TRACING: bool = False
+    LANGSMITH_PROJECT: str = "sl-business-intelligence-copilot"
+    LANGSMITH_ENDPOINT: str = "https://api.smith.langchain.com"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         extra="ignore",

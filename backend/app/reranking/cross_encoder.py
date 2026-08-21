@@ -4,7 +4,7 @@ from sentence_transformers import CrossEncoder
 
 from app.database.models import Chunk
 from app.reranking.base import BaseReranker
-
+from langsmith import traceable
 
 class CrossEncoderReranker(BaseReranker):
 
@@ -13,6 +13,10 @@ class CrossEncoderReranker(BaseReranker):
             settings.RERANKER_MODEL
         )
 
+    @traceable(
+        name="Reranker",
+        run_type="chain",
+    )
     def rerank(
         self,
         question: str,
@@ -51,10 +55,12 @@ class CrossEncoderReranker(BaseReranker):
                 """
             )
 
-        return [
+        results = [
             RerankedChunk(
                 chunk=chunk,
                 score=float(score),
             )
             for chunk, score in ranked[:top_k]
         ]
+
+        return results

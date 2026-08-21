@@ -10,7 +10,8 @@ from app.database.models import Chunk
 
 from app.rag.retriever import Retriever
 from app.reranking.cross_encoder import CrossEncoderReranker
-
+from app.core import langsmith
+from langsmith import traceable
 
 class RAGPipeline:
 
@@ -39,6 +40,10 @@ class RAGPipeline:
 
         self.reranker = reranker or CrossEncoderReranker()
 
+    @traceable(
+        name="Retrieve Documents",
+        run_type="retriever",
+    )
     def retrieve(self, question: str) -> tuple[list[Chunk], str]:
 
         # First stage:
@@ -63,6 +68,10 @@ class RAGPipeline:
 
         return chunks, context
 
+    @traceable(
+        name="RAG Pipeline",
+        run_type="chain",
+    )
     def ask(self, question: str) -> RAGResults:
         """
         Ask a question to the RAG pipeline and get an answer.
