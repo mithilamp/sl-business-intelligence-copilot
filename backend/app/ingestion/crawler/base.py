@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class BaseCrawler(ABC):
 
     @abstractmethod
-    def fetch(self):
+    def fetch(self, url: str | None = None):
         pass
 
     @abstractmethod

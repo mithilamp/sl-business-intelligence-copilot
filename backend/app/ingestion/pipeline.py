@@ -6,6 +6,7 @@ from app.database.vector_store import VectorStore
 from app.embeddings.openai_embedder import OpenAIEmbedder
 from app.ingestion.chunker.recursive_chunker import RecursiveChunker
 from app.ingestion.parser.pdf_parser import PDFParser
+from app.ingestion.metadata.document_classifier import classify_document
 
 class IngestionPipeline:
 
@@ -20,14 +21,22 @@ class IngestionPipeline:
         self.store = VectorStore()
 
 
-    def ingest_pdf(self, source: DataSource, pdf_path: Path):
+    def ingest_pdf(self, source: DataSource, pdf_path: Path, document_url: str | None = None):
 
         logger.info(f"Ingesting {pdf_path.name} from source {source.name}")
+
+        metadata = classify_document(
+            pdf_path.name
+        )
+        logger.info(f"Document metadata: {metadata}")
 
         document = self.store.get_or_create_document(
             title=pdf_path.stem.replace("_", " ").title(),
             filename=pdf_path.name,
             source=source.name,
+            document_url=document_url,
+            category=metadata["category"],
+            document_type=metadata["document_type"],
         )
 
         if self.store.has_chunks(document.id):

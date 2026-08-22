@@ -74,7 +74,9 @@ class RAGPipeline:
             top_k=5,
         )
 
-        chunks = [item.chunk for item in reranked]
+        filtered = reranked[:3]
+
+        chunks = [item.chunk for item in filtered]
 
         context = self.context_builder.build(chunks)
 
@@ -139,10 +141,13 @@ class RAGPipeline:
             if document.id not in seen_documents:
                 sources.append(
                     Source(
-                        title=document.title,
-                        filename=document.filename,
-                        source=document.source,
-                        document_url=document.document_url,
+                        title=chunk.document.title,
+                        filename=chunk.document.filename,
+                        source=chunk.document.source,
+                        category=chunk.document.category,
+                        document_type=chunk.document.document_type,
+                        published_date=chunk.document.published_date,
+                        document_url=chunk.document.document_url,
                     )
                 )
                 seen_documents.add(document.id)

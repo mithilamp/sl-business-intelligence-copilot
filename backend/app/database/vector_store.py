@@ -45,6 +45,7 @@ class VectorStore:
                 .all()
             )
             logger.info(f"Retrieved {len(results)} chunks (limit={limit}).")
+            print("NUMBER OF VECTOR RESULTS:", len(results))
             return results
         except Exception:
             logger.error("Failed to search vector store.")
@@ -59,6 +60,10 @@ class VectorStore:
         filename: str,
         source: str,
         document_url: str | None = None,
+        category: str | None = None,
+        document_type: str | None = None,
+        published_date: str | None = None,
+        language: str | None = None,
     ) -> Document:
 
         session = self.postgres.get_session()
@@ -71,10 +76,17 @@ class VectorStore:
             )
 
             if document:
-                logger.info(
-                    f"Document already exists: {filename} "
-                    f"(id={document.id})"
-                )
+
+                document.document_url = document_url
+                document.category = category
+                document.document_type = document_type
+                document.published_date = published_date
+                document.language = language
+
+                session.commit()
+
+                session.refresh(document)
+
                 return document
 
             document = Document(
@@ -82,6 +94,10 @@ class VectorStore:
                 filename=filename,
                 source=source,
                 document_url=document_url,
+                category=category,
+                document_type=document_type,
+                published_date=published_date,
+                language=language,
             )
 
             session.add(document)

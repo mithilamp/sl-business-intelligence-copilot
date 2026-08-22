@@ -29,14 +29,14 @@ export default function SourceList({
           >
 
             {source.document_url ? (
-              <a
-                href={`http://localhost:8000${source.document_url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium underline"
-              >
-                {source.title}
-              </a>
+            <a
+              href={source.document_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline"
+            >
+              {source.title}
+            </a>
             ) : (
               <p className="font-medium">
                 {source.title}
@@ -50,6 +50,18 @@ export default function SourceList({
             <p className="text-sm text-gray-500">
               {source.source}
             </p>
+
+            {source.category && (
+            <p className="text-sm text-gray-500">
+              Category: {source.category}
+            </p>
+            )}
+
+            {source.document_type && (
+            <p className="text-sm text-gray-500">
+              Type: {source.document_type}
+            </p>
+            )}
 
           </div>
 

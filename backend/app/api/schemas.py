@@ -9,6 +9,9 @@ class SourceResponse(BaseModel):
     title: str
     filename: str
     source: str
+    category: str | None = None
+    document_type: str | None = None
+    published_date: str | None = None
     document_url: str | None = None
 
 class QuestionResponse(BaseModel):

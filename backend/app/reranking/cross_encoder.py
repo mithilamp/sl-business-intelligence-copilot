@@ -44,16 +44,29 @@ class CrossEncoderReranker(BaseReranker):
             ranked[:top_k],
             start=1,
         ):
-            print(
-                f"""
-                Rank: {rank}
-                Score: {score:.4f}
-                File: {chunk.document.filename}
-                Chunk: {chunk.chunk_index}
+                print(
+                    f"""
+                ==============================
+                RANK: {rank}
+                SCORE: {score:.4f}
 
-                {chunk.text[:500]}
+                FILE:
+                {chunk.document.filename}
+
+                CATEGORY:
+                {chunk.document.category}
+
+                TYPE:
+                {chunk.document.document_type}
+
+                CHUNK:
+                {chunk.chunk_index}
+
+                CONTENT:
+                {chunk.text[:1000]}
+                ==============================
                 """
-            )
+                )
 
         results = [
             RerankedChunk(

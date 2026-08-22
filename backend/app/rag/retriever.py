@@ -22,7 +22,18 @@ class Retriever:
 
         embedding = self.embedder.embed(question)
 
-        return self.store.search(
-            embedding=embedding,
-            limit=limit,
-        )
+        chunks = self.store.search(
+                 embedding=embedding,
+                limit=limit,
+            )
+
+        print("\n========== VECTOR SEARCH FILES ==========")
+
+        for rank, chunk in enumerate(chunks, start=1):
+            print(
+                f"{rank}. {chunk.document.filename} | "
+                f"{chunk.document.category} | "
+                f"chunk={chunk.chunk_index}"
+            )
+
+        return chunks

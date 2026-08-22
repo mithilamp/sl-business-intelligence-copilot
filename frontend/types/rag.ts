@@ -9,6 +9,9 @@ export interface Source {
   title: string;
   filename: string;
   source: string;
+  category?: string | null;
+  document_type?: string | null;
+  published_date?: string | null;
   document_url: string | null;
 }
 

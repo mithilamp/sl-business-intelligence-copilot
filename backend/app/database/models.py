@@ -11,15 +11,48 @@ class Base(DeclarativeBase):
 class Document(Base):
     __tablename__ = "documents"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True,
+    )
 
-    title: Mapped[str] = mapped_column(String(255))
+    title: Mapped[str] = mapped_column(
+        String(255)
+    )
 
-    filename: Mapped[str] = mapped_column(String(255))
+    filename: Mapped[str] = mapped_column(
+        String(255)
+    )
 
-    source: Mapped[str] = mapped_column(String(255))
+    source: Mapped[str] = mapped_column(
+        String(255)
+    )
 
-    document_url: Mapped[str | None] = mapped_column(String(500))
+    document_url: Mapped[str | None] = mapped_column(
+        String(500),
+        nullable=True,
+    )
+
+    category: Mapped[str | None] = mapped_column(
+        String(100),
+        nullable=True,
+    )
+
+    document_type: Mapped[str | None] = mapped_column(
+        String(100),
+        nullable=True,
+    )
+
+    published_date: Mapped[str | None] = mapped_column(
+        String(50),
+        nullable=True,
+    )
+
+    language: Mapped[str | None] = mapped_column(
+        String(20),
+        nullable=True,
+    )
+
 
     chunks: Mapped[list["Chunk"]] = relationship(
         back_populates="document",
