@@ -13,6 +13,7 @@ class SourceResponse(BaseModel):
     document_type: str | None = None
     published_date: str | None = None
     document_url: str | None = None
+    chunks: list[dict] | None = None
 
 class QuestionResponse(BaseModel):
     question: str

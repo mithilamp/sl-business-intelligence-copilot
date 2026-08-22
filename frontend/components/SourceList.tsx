@@ -29,17 +29,17 @@ export default function SourceList({
           >
 
             {source.document_url ? (
-            <a
-              href={source.document_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline"
-            >
-              {source.title}
-            </a>
+              <a
+                href={source.document_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline"
+              >
+                📄 {source.title}
+              </a>
             ) : (
               <p className="font-medium">
-                {source.title}
+                📄 {source.title}
               </p>
             )}
 
@@ -52,15 +52,41 @@ export default function SourceList({
             </p>
 
             {source.category && (
-            <p className="text-sm text-gray-500">
-              Category: {source.category}
-            </p>
+              <p className="text-sm text-gray-500">
+                Category: {source.category}
+              </p>
             )}
 
             {source.document_type && (
-            <p className="text-sm text-gray-500">
-              Type: {source.document_type}
-            </p>
+              <p className="text-sm text-gray-500">
+                Type: {source.document_type}
+              </p>
+            )}
+
+            {source.chunks && source.chunks.length > 0 && (
+              <div className="mt-3">
+
+                <p className="text-sm font-medium">
+                  Relevant sections:
+                </p>
+
+                <ul className="mt-1 space-y-1 text-sm text-gray-500">
+
+                  {source.chunks.map((chunk) => (
+
+                    <li key={chunk.chunk_index}>
+                      ✓ Chunk {chunk.chunk_index}
+                      {" "}
+                      <span>
+                        (score: {chunk.relevance_score})
+                      </span>
+                    </li>
+
+                  ))}
+
+                </ul>
+
+              </div>
             )}
 
           </div>

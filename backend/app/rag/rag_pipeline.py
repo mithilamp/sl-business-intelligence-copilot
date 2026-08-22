@@ -17,6 +17,8 @@ from app.reranking.cross_encoder import CrossEncoderReranker
 from app.core import langsmith
 from langsmith import traceable
 
+from app.reranking.models import RerankedChunk
+
 class RAGPipeline:
 
     def __init__(
@@ -56,7 +58,7 @@ class RAGPipeline:
         name="Retrieve Documents",
         run_type="retriever",
     )
-    def retrieve(self, question: str) -> tuple[list[Chunk], str]:
+    def retrieve(self, question: str) -> tuple[list[RerankedChunk], str]:
 
         # First stage:
         # Vector similarity retrieves candidates
@@ -80,7 +82,7 @@ class RAGPipeline:
 
         context = self.context_builder.build(chunks)
 
-        return chunks, context
+        return filtered, context
 
     @traceable(
         name="RAG Pipeline",
@@ -117,7 +119,7 @@ class RAGPipeline:
         # --------------------------------------------------
         # RAG retrieval + reranking
         # --------------------------------------------------
-        chunks, context = self.retrieve(contextualized_question)
+        reranked_chunks, context = self.retrieve(contextualized_question)
 
         user_prompt = f"""
             Conversation Context: {memory_context}
@@ -132,25 +134,38 @@ class RAGPipeline:
         )
 
 
-        sources = []
-        seen_documents = set()
+        sources_map = {}
 
-        for chunk in chunks:
+        for item in reranked_chunks:
+
+            chunk = item.chunk
             document = chunk.document
 
-            if document.id not in seen_documents:
-                sources.append(
-                    Source(
-                        title=chunk.document.title,
-                        filename=chunk.document.filename,
-                        source=chunk.document.source,
-                        category=chunk.document.category,
-                        document_type=chunk.document.document_type,
-                        published_date=chunk.document.published_date,
-                        document_url=chunk.document.document_url,
-                    )
+            if document.id not in sources_map:
+
+                sources_map[document.id] = Source(
+                    title=document.title,
+                    filename=document.filename,
+                    source=document.source,
+                    category=document.category,
+                    document_type=document.document_type,
+                    published_date=document.published_date,
+                    document_url=document.document_url,
+                    chunks=[]
                 )
-                seen_documents.add(document.id)
+
+            sources_map[document.id].chunks.append(
+                {
+                    "chunk_index": chunk.chunk_index,
+                    "relevance_score": round(
+                        float(item.score),
+                        4
+                    )
+                }
+            )
+
+
+        sources = list(sources_map.values())
 
         # --------------------------------------------------
         # Save conversation

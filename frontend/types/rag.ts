@@ -13,6 +13,10 @@ export interface Source {
   document_type?: string | null;
   published_date?: string | null;
   document_url: string | null;
+  chunks?: {
+    chunk_index: number;
+    relevance_score: number;
+  }[];
 }
 
 export interface BusinessRecommendation {

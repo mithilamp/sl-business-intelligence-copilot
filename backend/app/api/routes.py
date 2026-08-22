@@ -31,6 +31,7 @@ def ask(request: QuestionRequest):
         document_type=source.document_type,
         published_date=source.published_date,
         document_url=source.document_url,
+        chunks=source.chunks,
     )
         for source in result.sources
     ]
@@ -61,6 +62,8 @@ def business_advice(request: BusinessAdviceRequest):
             document_type=chunk.document.document_type,
             published_date=chunk.document.published_date,
             document_url=chunk.document.document_url,
+            chunk_index=chunk.chunk_index,
+            relevance_score=None,
         )
         for chunk in result.chunks
     }.values())
