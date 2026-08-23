@@ -11,6 +11,8 @@ distro==1.9.0
 fastapi==0.141.1
 filelock==3.32.3
 fsspec==2026.7.0
+geographiclib==2.1
+geopy==2.5.0
 greenlet==3.5.4
 h11==0.16.0
 hf-xet==1.6.0
@@ -46,6 +48,7 @@ orjson==3.11.9
 ormsgpack==1.12.2
 packaging==26.3
 pgvector==0.5.0
+pillow==12.3.0
 playwright==1.62.0
 psycopg==3.3.4
 psycopg-binary==3.3.4
@@ -57,6 +60,7 @@ pyee==13.0.1
 Pygments==2.21.0
 pymupdf==1.28.2
 python-dotenv==1.2.2
+python-multipart==0.0.32
 PyYAML==6.0.3
 regex==2026.7.19
 requests==2.34.2

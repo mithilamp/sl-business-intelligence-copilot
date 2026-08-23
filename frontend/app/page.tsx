@@ -1,23 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import QuestionForm from "@/components/QuestionForm";
 import RAGAnswerCard from "@/components/RAGAnswerCard";
 import SourceList from "@/components/SourceList";
 import BusinessAdviceCard from "@/components/BusinessAdviceCard";
+import LandAnalysisForm from "@/components/LandAnalysisForm";
+import LandReportCard from "@/components/LandReportCard";
+import LandEvidenceSummary from "@/components/LandEvidenceSummary";
 
 import {
   ask,
   getBusinessAdvice,
+  analyzeLand,
 } from "@/services/api";
 
 import {
   AskResponse,
   BusinessAdviceResponse,
+  LandAnalysisResponse,
+  LandBusinessReport,
 } from "@/types/rag";
 
-type Mode = "ask" | "business";
+type Mode = "ask" | "business" | "land";
 
 export default function Home() {
 
@@ -31,22 +37,19 @@ export default function Home() {
   const [businessAdvice, setBusinessAdvice] =
     useState<BusinessAdviceResponse | null>(null);
 
+  const [landAnalysis, setLandAnalysis] =
+    useState<LandAnalysisResponse | null>(null);
+
+  const [selectedLandReport, setSelectedLandReport] =
+    useState<LandBusinessReport | null>(null);
+
   const [conversationId, setConversationId] =
-    useState<number | null>(null);
+    useState<number | null>(() => {
+      if (typeof window === "undefined") return null;
 
-
-  useEffect(() => {
-
-    const savedConversationId =
-      localStorage.getItem("conversation_id");
-
-    if (savedConversationId) {
-      setConversationId(
-        Number(savedConversationId)
-      );
-    }
-
-  }, []);
+      const savedConversationId = localStorage.getItem("conversation_id");
+      return savedConversationId ? Number(savedConversationId) : null;
+    });
 
   async function handleQuestion(question: string) {
 
@@ -54,6 +57,7 @@ export default function Home() {
 
     setAnswer(null);
     setBusinessAdvice(null);
+    setLandAnalysis(null);
 
     try {
 
@@ -69,8 +73,10 @@ export default function Home() {
 
       } else {
 
-        const response =
-          await getBusinessAdvice(question);
+        const response = await getBusinessAdvice(
+          question,
+          selectedLandReport
+        );
 
         setBusinessAdvice(response);
 
@@ -81,6 +87,28 @@ export default function Home() {
       setLoading(false);
 
     }
+  }
+
+  async function handleLandAnalysis(file: File) {
+    setLoading(true);
+    setAnswer(null);
+    setBusinessAdvice(null);
+    setLandAnalysis(null);
+    setSelectedLandReport(null);
+
+    try {
+      const response = await analyzeLand(file);
+      setLandAnalysis(response);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function askAdvisorAboutLand(report: LandBusinessReport) {
+    setSelectedLandReport(report);
+    setBusinessAdvice(null);
+    setAnswer(null);
+    setMode("business");
   }
 
   function newChat() {
@@ -94,6 +122,8 @@ export default function Home() {
     setAnswer(null);
 
     setBusinessAdvice(null);
+    setLandAnalysis(null);
+    setSelectedLandReport(null);
   }
 
   return (
@@ -117,6 +147,17 @@ export default function Home() {
           onClick={newChat}
           className="rounded border px-5 py-2">
           New Chat
+        </button>
+
+        <button
+          onClick={() => setMode("land")}
+          className={`rounded px-5 py-2 ${
+            mode === "land"
+              ? "bg-black text-white"
+              : "border"
+          }`}
+        >
+          Land Intelligence
         </button>
 
         <button
@@ -146,10 +187,25 @@ export default function Home() {
 
       {/* Question form */}
 
-      <QuestionForm
-        onSubmit={handleQuestion}
-        loading={loading}
-      />
+      {mode === "land" ? (
+        <LandAnalysisForm
+          onSubmit={handleLandAnalysis}
+          loading={loading}
+        />
+      ) : (
+        <div className="space-y-4">
+          {mode === "business" && selectedLandReport && (
+            <LandEvidenceSummary
+              report={selectedLandReport}
+              onRemove={() => setSelectedLandReport(null)}
+            />
+          )}
+          <QuestionForm
+            onSubmit={handleQuestion}
+            loading={loading}
+          />
+        </div>
+      )}
 
 
       {/* RAG answer */}
@@ -184,6 +240,19 @@ export default function Home() {
             sources={businessAdvice.sources}
           />
 
+        </div>
+      )}
+
+      {landAnalysis && mode === "land" && (
+        <div className="mt-8 space-y-8">
+          {landAnalysis.analysis.map((page, index) => (
+            <LandReportCard
+              key={index}
+              page={page}
+              pageNumber={index + 1}
+              onAskAdvisor={askAdvisorAboutLand}
+            />
+          ))}
         </div>
       )}
 
