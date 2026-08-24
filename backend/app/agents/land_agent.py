@@ -5,6 +5,7 @@ from app.land.location_normalizer import LocationNormalizer
 from app.llm.openai_llm import OpenAILLM
 from app.land.business_analyzer import LandBusinessAnalyzer
 from app.land.report_builder import LandBusinessReportBuilder
+from app.core.langsmith import traceable
 
 import json
 
@@ -30,19 +31,24 @@ class LandAgent:
         self.report_builder = LandBusinessReportBuilder()
 
 
+    @traceable(
+        name="Land Intelligence Analysis",
+        run_type="chain",
+        tags=["land-intelligence", "multimodal"],
+    )
     def analyze(
         self,
         file_path: str,
     ):
 
-        pages = self.parser.parse(file_path)
+        pages = self._parse_document(file_path)
 
         results = []
 
 
         for page in pages:
 
-            vision_result = self.vision.analyze(page)
+            vision_result = self._extract_land_evidence(page)
 
 
             print("====================")
@@ -79,7 +85,7 @@ class LandAgent:
 
 
                 normalized_location = (
-                    self.location_normalizer.normalize(
+                    self._normalise_location(
                         location_information
                     )
                 )
@@ -101,7 +107,7 @@ class LandAgent:
                 # ---------------------------------
 
                 analysis["geolocation"] = (
-                    self.geo.locate(
+                    self._geolocate(
                         normalized_location["search_query"],
                         source_confidence=normalized_location.get(
                             "confidence"
@@ -114,7 +120,7 @@ class LandAgent:
             # ---------------------------------
             # Run the analysis even when the location cannot be extracted: the
             # survey itself can still provide grounded observations and gaps.
-            business_analysis = self.business_analyzer.analyze(
+            business_analysis = self._analyse_business_fit(
                 analysis
             )
 
@@ -123,7 +129,7 @@ class LandAgent:
             )
 
             analysis["land_business_report"] = (
-                self.report_builder.build(analysis).model_dump()
+                self._build_report(analysis).model_dump()
             )
 
 
@@ -138,3 +144,51 @@ class LandAgent:
             "pages_processed": len(pages),
             "analysis": results
         }
+
+    @traceable(
+        name="Parse Land Document",
+        run_type="tool",
+        tags=["land-parser"],
+    )
+    def _parse_document(self, file_path: str):
+        return self.parser.parse(file_path)
+
+    @traceable(
+        name="Vision Evidence Extraction",
+        run_type="llm",
+        tags=["vision", "multimodal"],
+    )
+    def _extract_land_evidence(self, page):
+        return self.vision.analyze(page)
+
+    @traceable(
+        name="Normalize Location",
+        run_type="chain",
+        tags=["location-normalization"],
+    )
+    def _normalise_location(self, location_information):
+        return self.location_normalizer.normalize(location_information)
+
+    @traceable(
+        name="Geolocate and Enrich",
+        run_type="tool",
+        tags=["geospatial", "openstreetmap"],
+    )
+    def _geolocate(self, search_query: str, source_confidence: str | None = None):
+        return self.geo.locate(search_query, source_confidence=source_confidence)
+
+    @traceable(
+        name="Land Business Analysis",
+        run_type="llm",
+        tags=["business-analysis"],
+    )
+    def _analyse_business_fit(self, analysis: dict):
+        return self.business_analyzer.analyze(analysis)
+
+    @traceable(
+        name="Build Land Intelligence Report",
+        run_type="chain",
+        tags=["report"],
+    )
+    def _build_report(self, analysis: dict):
+        return self.report_builder.build(analysis)

@@ -54,3 +54,17 @@ class BusinessAdviceResponse(BaseModel):
     question: str
     recommendation: BusinessRecommendation
     sources: list[SourceResponse]
+
+
+class AgentRequest(BaseModel):
+    question: str = Field(min_length=1)
+    conversation_id: int | None = None
+    land_report: LandBusinessReport | None = None
+
+
+class AgentResponse(BaseModel):
+    question: str
+    answer: str
+    selected_tool: str
+    routing_reason: str
+    conversation_id: int

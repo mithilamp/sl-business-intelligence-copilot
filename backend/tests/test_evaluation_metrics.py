@@ -1,4 +1,4 @@
-from app.evaluation.metrics import source_hit
+from app.evaluation.metrics import precision_at_k, reciprocal_rank, source_hit, summarise
 
 
 def test_source_hit_matches_source_metadata():
@@ -47,3 +47,27 @@ def test_source_hit_returns_false_when_metadata_does_not_match():
     ]
 
     assert not source_hit(["Central Bank of Sri Lanka"], retrieved_sources)
+
+
+def test_aliases_and_rank_aware_metrics():
+    retrieved_sources = [
+        {"source": "Unrelated Publisher"},
+        {"source": "Central Bank of Sri Lanka"},
+        {"source": "Central Bank of Sri Lanka"},
+    ]
+    expected = ["CBSL|Central Bank of Sri Lanka"]
+    assert source_hit(expected, retrieved_sources)
+    assert reciprocal_rank(expected, retrieved_sources) == 0.5
+    assert precision_at_k(expected, retrieved_sources, 3) == 0.6667
+
+
+def test_summary_records_category_and_failure_details():
+    report = summarise([
+        {"id": "ok", "question": "q", "category": "economy", "expected_sources": ["CBSL"],
+         "retrieved_sources": [{"source": "CBSL"}]},
+        {"id": "miss", "question": "q2", "category": "economy", "expected_sources": ["BOI"],
+         "retrieved_sources": [{"source": "CBSL"}]},
+    ])
+    assert report["hit_rate_at_3"] == 0.5
+    assert report["category_summary"]["economy"]["hits"] == 1
+    assert report["failures"][0]["id"] == "miss"
