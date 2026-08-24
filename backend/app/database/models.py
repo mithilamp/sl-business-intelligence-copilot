@@ -53,6 +53,10 @@ class Document(Base):
         nullable=True,
     )
 
+    geography: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    sector: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    year: Mapped[int | None] = mapped_column(Integer, nullable=True)
+
 
     chunks: Mapped[list["Chunk"]] = relationship(
         back_populates="document",

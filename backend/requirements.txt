@@ -53,6 +53,7 @@ playwright==1.62.0
 psycopg==3.3.4
 psycopg-binary==3.3.4
 psycopg2-binary==2.9.12
+pytest==8.4.2
 pydantic==2.13.4
 pydantic-settings==2.15.0
 pydantic_core==2.46.4

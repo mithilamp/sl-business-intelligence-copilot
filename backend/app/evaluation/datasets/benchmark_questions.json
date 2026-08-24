@@ -1,0 +1,51 @@
+[
+  {
+    "id": "economy_001",
+    "question": "What are the main economic factors affecting Sri Lanka's business environment?",
+    "category": "economy",
+    "expected_sources": [
+      "Central Bank of Sri Lanka"
+    ]
+  },
+  {
+    "id": "investment_001",
+    "question": "Which sectors are promoted for foreign investment in Sri Lanka?",
+    "category": "investment",
+    "expected_sources": [
+      "Board of Investment"
+    ]
+  },
+  {
+    "id": "agriculture_001",
+    "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+    "category": "agriculture",
+    "expected_sources": [
+      "Department of Agriculture"
+    ]
+  },
+  {
+    "id": "export_001",
+    "question": "Which Sri Lankan products have export potential?",
+    "category": "export",
+    "expected_sources": [
+      "Export Development Board"
+    ]
+  },
+  {
+    "id": "demographics_001",
+    "question": "How can population and employment data support business decisions?",
+    "category": "statistics",
+    "expected_sources": [
+      "Department of Census and Statistics"
+    ]
+  },
+  {
+    "id": "land_tourism_001",
+    "question": "Would this land be suitable for tourism development?",
+    "category": "land_business",
+    "expected_sources": [
+      "OpenStreetMap",
+      "Central Bank of Sri Lanka"
+    ]
+  }
+]

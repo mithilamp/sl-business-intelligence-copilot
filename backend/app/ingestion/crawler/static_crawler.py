@@ -1,4 +1,6 @@
 import requests
+import html as html_module
+import re
 
 from requests import Session
 from bs4 import BeautifulSoup
@@ -62,6 +64,17 @@ class StaticCrawler(BaseCrawler):
 
             links.add(href)
 
+        # Some publishers store URLs inside page-builder shortcodes instead of
+        # anchor tags. Decoding the markup keeps this generic while allowing
+        # source rules to decide which URLs are documents.
+        decoded_html = html_module.unescape(html)
+        embedded_urls = re.findall(
+            r"https?://[^\s<>\"'”|\[\]]+",
+            decoded_html,
+            flags=re.IGNORECASE,
+        )
+        links.update(url.rstrip(")},;") for url in embedded_urls)
+
         logger.info(
             f"Discovered {len(links)} links from {page_url}"
         )
@@ -69,12 +82,24 @@ class StaticCrawler(BaseCrawler):
         return sorted(links)
 
     def get_pdf_links(self, links: list[str]):
+        pdf_links = set()
+        for link in links:
+            if urlparse(link).path.lower().endswith(".pdf"):
+                pdf_links.add(link)
+                continue
 
-        pdf_links = {
-            link
-            for link in links
-            if urlparse(link).path.lower().endswith(".pdf")
-        }
+            # DOA embeds public publications as Google Drive viewer links.
+            # Convert them to stable download URLs for the shared downloader.
+            match = re.match(
+                r"https?://drive\.google\.com/file/d/([^/]+)/",
+                link,
+                flags=re.IGNORECASE,
+            )
+            if self.source.key == "doa" and match:
+                file_id = match.group(1)
+                pdf_links.add(
+                    f"https://drive.usercontent.google.com/download?id={file_id}&export=download&confirm=t"
+                )
 
         logger.info(
             f"Discovered {len(pdf_links)} PDF links."
@@ -84,18 +109,11 @@ class StaticCrawler(BaseCrawler):
 
     def is_internal_link(self, url: str) -> bool:
 
-        source_domain = urlparse(
-            self.source.base_url
-        ).netloc
+        source_domains = self.source.allowed_domains or (urlparse(self.source.base_url).netloc,)
 
         link_domain = urlparse(url).netloc
 
-        return (
-            link_domain == source_domain
-            or link_domain.endswith(
-                "." + source_domain
-            )
-        )
+        return any(link_domain == domain or link_domain.endswith("." + domain) for domain in source_domains)
 
     def crawl(
         self,
@@ -103,7 +121,7 @@ class StaticCrawler(BaseCrawler):
         max_pdfs: int = 30,
     ) -> list[str]:
 
-        pages_to_visit = [self.source.base_url]
+        pages_to_visit = list(self.source.crawl_start_urls)
 
         visited_pages = set()
         discovered_pdfs = set()

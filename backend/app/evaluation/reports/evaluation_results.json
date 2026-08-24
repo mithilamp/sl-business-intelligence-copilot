@@ -1,0 +1,222 @@
+{
+  "total_questions": 6,
+  "source_hit_rate": 0.333,
+  "category_summary": {
+    "economy": {
+      "total": 1,
+      "hits": 0,
+      "hit_rate": 0.0
+    },
+    "investment": {
+      "total": 1,
+      "hits": 1,
+      "hit_rate": 1.0
+    },
+    "agriculture": {
+      "total": 1,
+      "hits": 0,
+      "hit_rate": 0.0
+    },
+    "export": {
+      "total": 1,
+      "hits": 1,
+      "hit_rate": 1.0
+    },
+    "statistics": {
+      "total": 1,
+      "hits": 0,
+      "hit_rate": 0.0
+    },
+    "land_business": {
+      "total": 1,
+      "hits": 0,
+      "hit_rate": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": "economy_001",
+      "question": "What are the main economic factors affecting Sri Lanka's business environment?",
+      "category": "economy",
+      "expected_sources": [
+        "Central Bank of Sri Lanka"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Sampath-Bank-Book-Guide",
+          "filename": "Sampath-Bank-Book-Guide.pdf",
+          "source": "Board of Investment of Sri Lanka",
+          "category": "Investment",
+          "document_type": "Guide",
+          "published_date": null,
+          "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+        },
+        {
+          "title": "Business-Lanka-2025-2",
+          "filename": "business-lanka-2025-2.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2025",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+        },
+        {
+          "title": "Business-Lanka-2023-1",
+          "filename": "business-lanka-2023-1.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2023",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+        }
+      ],
+      "answer": "- Macroeconomic stabilization: low inflation, significant foreign reserves, and expected higher GDP growth in 2025; debt restructuring reinforcing fiscal discipline and policy predictability (Business-Lanka-2025-2, Sri Lanka Export Development Board).\n- IMF-supported reform path: the IMF Extended Fund Facility is driving fiscal and monetary responsibility, alongside increased transparency and a strong anti-corruption agenda (Sampath-Bank-Book-Guide, Board of Investment of Sri Lanka).\n- Recovery from prior shocks: Sri Lanka is emerging from a period of rising debt and Covid-19-related fiscal pressures, with GDP on the road to recovery (Sampath-Bank-Book-Guide, Board of Investment of Sri Lanka).\n- Market conditions: asset prices and valuations at historic lows, creating attractive entry opportunities for investors (Sampath-Bank-Book-Guide, Board of Investment of Sri Lanka).\n- Policy and trade orientation: a longstanding open-market, free-trade stance and strong institutions that support a conducive business environment (Sampath-Bank-Book-Guide, Board of Investment of Sri Lanka).\n- Growth focus and sectoral opportunities: shift toward value-added, climate-aligned, innovation-driven exports; low market-entry costs; opportunities in high-value agriculture, wellness, and digital sectors; partnerships in a transparent, reform-aligned economy (Business-Lanka-2025-2, Sri Lanka Export Development Board).\n- Investment incentives and enablers: use of the Strategic Development Project Act to attract and retain FDI; emphasis on infrastructure upgrades and workforce development, including for the Blue Economy (Business-Lanka-2023-1, Sri Lanka Export Development Board)."
+    },
+    {
+      "id": "investment_001",
+      "question": "Which sectors are promoted for foreign investment in Sri Lanka?",
+      "category": "investment",
+      "expected_sources": [
+        "Board of Investment"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Annual-Report-2019",
+          "filename": "Annual-Report-2019.pdf",
+          "source": "Board of Investment of Sri Lanka",
+          "category": "Investment",
+          "document_type": "Annual Report",
+          "published_date": "2019",
+          "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+        },
+        {
+          "title": "Annual-Report-2020",
+          "filename": "Annual-Report-2020.pdf",
+          "source": "Board of Investment of Sri Lanka",
+          "category": "Investment",
+          "document_type": "Annual Report",
+          "published_date": "2020",
+          "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+        }
+      ],
+      "answer": "According to the Board of Investment of Sri Lanka:\n\nFrom Annual Report 2020:\n- Five priority sectors to drive FDI:\n  - Manufacturing (pharmaceutical; high value-add apparel; electronics and electricals)\n  - ICT (software development; BPM/KPM; IT training/education; emerging technologies)\n  - Hospitality and Tourism (Agro/Eco tourism; Adventure/Thrill tourism; Luxury hotels; MICE tourism)\n  - Agriculture and Food Processing (rubber; agri/processed food; fisheries)\n  - Construction, Infrastructure and Logistics (rapid transit; ports; airports)\n(Source: Annual-Report-2020.pdf)\n\nFrom Annual Report 2019:\n- Promoted sectors:\n  - Knowledge Services (IT/BPO/KPO/Higher Education/Vocational Training/R&D)\n  - Services (Hub/Export of Services/Trading Houses other than apparel/Logistics & Warehousing/Regional Operating Headquarters)\n  - Manufacturing (all manufacturing projects other than apparel)\n  - Apparel (apparel & textile, including apparel-related trading houses)\n  - Infrastructure (apartments; housing & township developments; mixed developments; shopping complexes; hospitals; road development; airports; ports; industrial zones)\n  - Tourism & Leisure (hotels; villas; water/theme parks; adventure tourism; airline services; mixed developments)\n  - Utilities\n(Source: Annual-Report-2019.pdf)"
+    },
+    {
+      "id": "agriculture_001",
+      "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+      "category": "agriculture",
+      "expected_sources": [
+        "Department of Agriculture"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Business-Lanka-2023-2",
+          "filename": "business-lanka-2023-2.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2023",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+        },
+        {
+          "title": "Business-Lanka-2022-Apr",
+          "filename": "business-lanka-2022-apr.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2022",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+        }
+      ],
+      "answer": "Key considerations drawn from the provided sources:\n\n- Market demand and positioning\n  - Rising global demand for organic, health-focused food—especially in developed markets—suggests opportunities for Sri Lankan producers (Business-Lanka-2022-Apr, Chunk 1).\n  - There is space to supply certified organic products and introduce new products internationally, provided direction and planning are in place (Business-Lanka-2022-Apr, Chunk 71).\n\n- Production model and compliance\n  - If pursuing organic, practices are meticulous and must be conducted with caution, including preparing nutrient inputs within the farm and ensuring fertilizers are heavy-metal–free and free of harmful substances (Business-Lanka-2022-Apr, Chunk 71).\n  - A gradual transition with stakeholder training is recommended to meet organic principles and standards (Business-Lanka-2022-Apr, Chunk 71).\n\n- Value-chain planning\n  - Plan for coordination across the value chain (farmers, intermediaries, other stakeholders), as all can benefit from a successful move toward organic agriculture (Business-Lanka-2022-Apr, Chunk 71).\n\n- Macro context\n  - Agriculture accounts for roughly 6–8% of Sri Lanka’s economy (services >70%, manufacturing ~20%), which should inform expectations, investment scale, and growth plans (Business-Lanka-2023-2, Chunk 15)."
+    },
+    {
+      "id": "export_001",
+      "question": "Which Sri Lankan products have export potential?",
+      "category": "export",
+      "expected_sources": [
+        "Export Development Board"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Business-Lanka-2025-1",
+          "filename": "business-lanka-2025-1.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2025",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+        },
+        {
+          "title": "Business-Lanka-2025-2",
+          "filename": "business-lanka-2025-2.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2025",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+        }
+      ],
+      "answer": "Based on the Sri Lanka Export Development Board’s Business Lanka 2025 reports:\n\n- Apparel, textiles and fashion (Business-Lanka-2025-2, Sri Lanka Expo 2026 overview)\n- Gems and jewelry (Business-Lanka-2025-2)\n- Boat building (Business-Lanka-2025-2)\n- Engineering and automotive components (Business-Lanka-2025-2)\n- Rubber and polymer products (Business-Lanka-2025-2)\n  - Including specific items such as rubber plungers, mats, DN rings, O-rings, and pipe seals (Business-Lanka-2025-1)\n- Electrical and electronic products (Business-Lanka-2025-2)\n- Lifestyle and handicraft products (Business-Lanka-2025-2)\n- Pharmaceutical products (Business-Lanka-2025-2)\n- Mineral and mineral-based products (Business-Lanka-2025-2)\n- Agricultural exports: tea, spices, and concentrate products (Business-Lanka-2025-2)"
+    },
+    {
+      "id": "demographics_001",
+      "question": "How can population and employment data support business decisions?",
+      "category": "statistics",
+      "expected_sources": [
+        "Department of Census and Statistics"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+          "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+          "source": "Department of Agriculture Sri Lanka",
+          "category": "Agriculture",
+          "document_type": "Report",
+          "published_date": null,
+          "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+        },
+        {
+          "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+          "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+          "source": "Central Bank of Sri Lanka",
+          "category": "Banking",
+          "document_type": "Report",
+          "published_date": null,
+          "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+        },
+        {
+          "title": "Fssr 2023E",
+          "filename": "fssr_2023e.pdf",
+          "source": "Central Bank of Sri Lanka",
+          "category": "Financial Stability",
+          "document_type": "Report",
+          "published_date": null,
+          "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+        }
+      ],
+      "answer": "- Signal workforce availability and labour-market conditions: Employment indicators such as the labour force participation rate (reported as still below 50%) reveal structural and persistent weaknesses in the labour market and potential for improvement. Businesses can use this to inform hiring plans, capacity planning, and timing of expansions, given more than half of the working-age population is currently disengaged from employment (Source: Central Bank of Sri Lanka, FSSR 2023E, Chapter 1).\n\n- Enable agile, data-driven decisions: Access to accurate and timely data is essential for effective analysis and for developing agile responses to fast-changing conditions. Applying this to population and employment datasets helps businesses improve forecasting, stress-testing, and scenario planning beyond traditional data sources (Source: Central Bank of Sri Lanka, “Central Banks Policy Agenda for 2026 and Beyond”).\n\n- Support strategic planning through unified datasets: Consolidated statistical resources that bring together datasets of national importance into an accessible format support strategic planning and implementation across sectors—helping stakeholders respond effectively to challenges. Population and employment data, when included in such resources, can guide market sizing and resource allocation (Source: Department of Agriculture Sri Lanka, Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp).\n\nNote: The retrieved context does not provide specific, detailed examples of population data applications in business decisions, but it emphasizes the value of accurate, timely, and consolidated data—and highlights labour force participation—as foundations for better decision-making."
+    },
+    {
+      "id": "land_tourism_001",
+      "question": "Would this land be suitable for tourism development?",
+      "category": "land_business",
+      "expected_sources": [
+        "OpenStreetMap",
+        "Central Bank of Sri Lanka"
+      ],
+      "retrieved_sources": [
+        {
+          "title": "Business-Lanka-2023-1",
+          "filename": "business-lanka-2023-1.pdf",
+          "source": "Sri Lanka Export Development Board",
+          "category": "Exports and Trade",
+          "document_type": "Report",
+          "published_date": "2023",
+          "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+        }
+      ],
+      "answer": "Information unavailable. The retrieved context does not describe the specific land in question, so I can’t determine its suitability.\n\nFrom Business-Lanka-2023-1 (Sri Lanka Export Development Board), suitability for tourism—especially nautical/marine tourism—has been linked to:\n- Proximity to fishery harbors and protected lagoons for mini marinas and “Harbor Village” development (Chunk 32).\n- Coastal areas where beach rehabilitation (sand nourishment), artificial reefs, and submerged wave breakers could support tourism uses (Chunk 37).\n- Locations suited for water sports, sport fishing, whale watching, and diving (wreck/reef/rock/night), ideally within a proper MPA system and with coordination by the Department of Archaeology, Sri Lanka Tourism Development Authority, and Department of Wildlife (Chunks 36–37).\n- Identified hubs/areas like Colombo Southern Harbour, Hambantota, Trincomalee, and the “Manner and Covery Basin” in the Eastern Province for expanding nautical tourism (Chunks 36–37).\n\nIf you share the land’s location and characteristics (e.g., coastal access, proximity to harbors/lagoons, environmental constraints), I can assess its fit against these points from the document."
+    }
+  ]
+}

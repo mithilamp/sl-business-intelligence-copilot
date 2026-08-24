@@ -64,6 +64,9 @@ class VectorStore:
         document_type: str | None = None,
         published_date: str | None = None,
         language: str | None = None,
+        geography: str | None = None,
+        sector: str | None = None,
+        year: int | None = None,
     ) -> Document:
 
         session = self.postgres.get_session()
@@ -71,7 +74,7 @@ class VectorStore:
         try:
             document = (
                 session.query(Document)
-                .filter(Document.filename == filename)
+                .filter(Document.filename == filename, Document.source == source)
                 .first()
             )
 
@@ -82,6 +85,9 @@ class VectorStore:
                 document.document_type = document_type
                 document.published_date = published_date
                 document.language = language
+                document.geography = geography
+                document.sector = sector
+                document.year = year
 
                 session.commit()
 
@@ -98,6 +104,9 @@ class VectorStore:
                 document_type=document_type,
                 published_date=published_date,
                 language=language,
+                geography=geography,
+                sector=sector,
+                year=year,
             )
 
             session.add(document)

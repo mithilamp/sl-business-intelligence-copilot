@@ -21,22 +21,26 @@ class IngestionPipeline:
         self.store = VectorStore()
 
 
-    def ingest_pdf(self, source: DataSource, pdf_path: Path, document_url: str | None = None):
+    def ingest_pdf(self, source: DataSource, pdf_path: Path, document_url: str | None = None, metadata: dict | None = None):
 
         logger.info(f"Ingesting {pdf_path.name} from source {source.name}")
 
-        metadata = classify_document(
-            pdf_path.name
-        )
+        inferred = classify_document(pdf_path.name)
+        metadata = {**inferred, **(metadata or {})}
         logger.info(f"Document metadata: {metadata}")
 
         document = self.store.get_or_create_document(
-            title=pdf_path.stem.replace("_", " ").title(),
+            title=metadata.get("title") or pdf_path.stem.replace("_", " ").title(),
             filename=pdf_path.name,
             source=source.name,
             document_url=document_url,
-            category=metadata["category"],
-            document_type=metadata["document_type"],
+            category=metadata.get("category") or source.default_category,
+            document_type=metadata.get("document_type") or source.default_document_type,
+            published_date=metadata.get("published_date"),
+            language=metadata.get("language") or source.default_language,
+            geography=metadata.get("geography") or source.default_geography,
+            sector=metadata.get("sector") or source.default_sector,
+            year=metadata.get("year"),
         )
 
         if self.store.has_chunks(document.id):
