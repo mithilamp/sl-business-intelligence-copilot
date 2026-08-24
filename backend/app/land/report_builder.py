@@ -65,6 +65,9 @@ class LandBusinessReportBuilder:
             location_and_accessibility={
                 "location_query": analysis.get("location_query"),
                 "geolocation": location_summary or None,
+                "nearby_status": nearby.get("status", "not_run"),
+                "nearby_provider": nearby.get("provider"),
+                "nearby_errors": nearby.get("errors", []),
                 "document_roads": document_extracted.get("roads", []),
                 "nearby_roads": road_access,
             },

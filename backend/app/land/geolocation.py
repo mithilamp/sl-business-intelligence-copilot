@@ -148,10 +148,17 @@ class GeoLocationService:
         # Nearby intelligence
         # ---------------------------------
 
-        nearby = self.nearby.find_nearby(
-            latitude,
-            longitude,
-        )
+        if match["match_quality"] == "coarse":
+            nearby = self.nearby.empty_result()
+            nearby["status"] = "insufficient_location"
+            nearby["errors"] = [
+                "Nearby lookup requires a town, village, suburb, or more precise match."
+            ]
+        else:
+            nearby = self.nearby.find_nearby(
+                latitude,
+                longitude,
+            )
 
         # ---------------------------------
         # Final result

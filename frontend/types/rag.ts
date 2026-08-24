@@ -80,6 +80,9 @@ export interface LandBusinessReport {
   location_and_accessibility: {
     location_query?: Record<string, unknown> | null;
     geolocation?: LandGeolocation | null;
+    nearby_status?: "ok" | "unavailable" | "not_run" | "insufficient_location";
+    nearby_provider?: string | null;
+    nearby_errors?: string[];
     document_roads: unknown[];
     nearby_roads: NearbyPlace[];
   };

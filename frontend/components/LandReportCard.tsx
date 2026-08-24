@@ -170,6 +170,7 @@ export default function LandReportCard({
           <dl className="space-y-3 text-sm">
             <div><dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#79705C]">Matched location</dt><dd className="mt-1 text-[#1B1F27]">{location?.address ?? "Not found"}</dd></div>
             <div><dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#79705C]">Confidence</dt><dd className="mt-1 text-[#1B1F27]">{location?.confidence ?? "none"} ({location?.location_level ?? "unknown"})</dd></div>
+            <div><dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#79705C]">Nearby lookup</dt><dd className="mt-1 text-[#1B1F27]">{report.location_and_accessibility.nearby_status === "ok" ? "OpenStreetMap lookup completed" : report.location_and_accessibility.nearby_status === "unavailable" ? "OpenStreetMap lookup temporarily unavailable" : report.location_and_accessibility.nearby_status === "insufficient_location" ? "A province or district match is too broad for reliable nearby places" : "Not run because no usable location was found"}</dd></div>
             <div><dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#79705C]">Nearby roads</dt><dd className="mt-1 text-[#1B1F27]">{report.location_and_accessibility.nearby_roads.length ? report.location_and_accessibility.nearby_roads.slice(0, 3).map((road) => `${road.name} · ${formatDistance(road.distance_meters)}`).join(", ") : "No mapped roads available"}</dd></div>
           </dl>
         </section>

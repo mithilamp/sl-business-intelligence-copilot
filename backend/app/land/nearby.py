@@ -7,8 +7,9 @@ class NearbyIntelligence:
 
     def __init__(self):
 
-        self.url = (
-            "https://overpass-api.de/api/interpreter"
+        self.urls = (
+            "https://overpass-api.de/api/interpreter",
+            "https://overpass.kumi.systems/api/interpreter",
         )
 
         self.radius = 3000
@@ -36,25 +37,26 @@ class NearbyIntelligence:
 
         (
           nwr(around:{self.radius},{latitude},{longitude})
-          ["amenity"="school"];
+          ["amenity"="school"]["name"];
 
           nwr(around:{self.radius},{latitude},{longitude})
-          ["amenity"="hospital"];
+          ["amenity"="hospital"]["name"];
 
           nwr(around:{self.radius},{latitude},{longitude})
-          ["amenity"="bank"];
+          ["amenity"="bank"]["name"];
 
           nwr(around:{self.radius},{latitude},{longitude})
-          ["shop"];
+          ["shop"]["name"];
 
           nwr(around:{self.radius},{latitude},{longitude})
-          ["amenity"="restaurant"];
+          ["amenity"="restaurant"]["name"];
 
           nwr(around:{self.radius},{latitude},{longitude})
-          ["tourism"="hotel"];
+          ["tourism"="hotel"]["name"];
 
           way(around:{self.radius},{latitude},{longitude})
-          ["highway"];
+          ["highway"~"^(motorway|trunk|primary|secondary|tertiary|residential|unclassified)$"]
+          ["name"];
         );
 
         out center;
@@ -62,44 +64,27 @@ class NearbyIntelligence:
 
         result = self.empty_result()
 
-        details = {
-            category: []
-            for category in result
-        }
+        data = None
+        errors = []
+        for url in self.urls:
+            try:
+                response = requests.post(
+                    url,
+                    data={"data": query},
+                    headers=self.headers,
+                    timeout=30,
+                )
+                response.raise_for_status()
+                data = response.json()
+                result["status"] = "ok"
+                result["provider"] = url
+                break
+            except (requests.RequestException, ValueError) as exc:
+                errors.append(f"{url}: {type(exc).__name__}")
 
-        # Kept separate from the legacy name-only result.  Existing clients can
-        # continue reading ``nearby.schools`` etc.; new clients can use the
-        # coordinates and straight-line distance in ``nearby_details``.
-        result["nearby_details"] = details
-
-        try:
-            response = requests.post(
-                self.url,
-                data=query,
-                headers=self.headers,
-                timeout=30,
-            )
-
-            response.raise_for_status()
-
-            data = response.json()
-
-        except requests.RequestException as exc:
-
-            print(
-                "Nearby intelligence request failed:",
-                exc,
-            )
-
-            return result
-
-        except ValueError as exc:
-
-            print(
-                "Nearby intelligence returned invalid JSON:",
-                exc,
-            )
-
+        if data is None:
+            result["status"] = "unavailable"
+            result["errors"] = errors
             return result
 
         candidates = {
@@ -262,7 +247,7 @@ class NearbyIntelligence:
 
     @staticmethod
     def empty_result() -> dict:
-        return {
+        categories = {
             "schools": [],
             "hospitals": [],
             "businesses": [],
@@ -270,6 +255,15 @@ class NearbyIntelligence:
             "restaurants": [],
             "hotels": [],
             "roads": [],
+        }
+        return {
+            **categories,
+            "nearby_details": {
+                category: [] for category in categories
+            },
+            "status": "not_run",
+            "provider": None,
+            "errors": [],
         }
 
     @staticmethod
