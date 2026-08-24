@@ -1,6 +1,7 @@
 from app.advisor.models import BusinessRecommendation
 from app.land.models import LandBusinessReport
 from pydantic import BaseModel, Field
+from datetime import datetime
 
 class QuestionRequest(BaseModel):
     question: str
@@ -25,6 +26,24 @@ class QuestionResponse(BaseModel):
     answer: str
     sources: list[SourceResponse]
     conversation_id: int
+
+
+class ConversationListItem(BaseModel):
+    id: int
+    title: str
+    created_at: datetime
+    updated_at: datetime
+
+
+class ConversationMessageResponse(BaseModel):
+    id: int
+    role: str
+    content: str
+    created_at: datetime
+
+
+class ConversationDetailResponse(ConversationListItem):
+    messages: list[ConversationMessageResponse]
 
 class BusinessAdviceRequest(BaseModel):
     question: str = Field(min_length=1)

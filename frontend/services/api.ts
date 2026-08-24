@@ -1,12 +1,28 @@
 import {
   AskResponse,
   BusinessAdviceResponse,
+  ConversationDetail,
+  ConversationSummary,
   LandAnalysisResponse,
   LandBusinessReport,
 } from "@/types/rag";
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
+async function requestJson<T>(url: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${API_BASE_URL}${url}`, init);
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => null);
+    throw new Error(error?.detail ?? "The request could not be completed.");
+  }
+
+  return response.json();
+}
+
 export async function ask(question: string, conversationId?: number | null): Promise<AskResponse> {
-  const response = await fetch("http://localhost:8000/ask", {
+  return requestJson<AskResponse>("/ask", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -14,19 +30,22 @@ export async function ask(question: string, conversationId?: number | null): Pro
     body: JSON.stringify({ question, conversation_id: conversationId ?? null }),
   });
 
-  if (!response.ok) {
-    throw new Error("Failed to get answer.");
-  }
+}
 
-  return response.json();
+export function getConversations(): Promise<ConversationSummary[]> {
+  return requestJson<ConversationSummary[]>("/conversations");
+}
+
+export function getConversation(id: number): Promise<ConversationDetail> {
+  return requestJson<ConversationDetail>(`/conversations/${id}`);
 }
 
 export async function getBusinessAdvice(
   question: string,
   landReport?: LandBusinessReport | null
 ): Promise<BusinessAdviceResponse> {
-  const response = await fetch(
-    "http://localhost:8000/business-advice",
+  return requestJson<BusinessAdviceResponse>(
+    "/business-advice",
     {
       method: "POST",
       headers: {
@@ -39,11 +58,6 @@ export async function getBusinessAdvice(
     }
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to get business advice.");
-  }
-
-  return response.json();
 }
 
 export async function analyzeLand(
@@ -53,7 +67,7 @@ export async function analyzeLand(
   formData.append("file", file);
 
   const response = await fetch(
-    "http://localhost:8000/land-analysis",
+    `${API_BASE_URL}/land-analysis`,
     {
       method: "POST",
       body: formData,

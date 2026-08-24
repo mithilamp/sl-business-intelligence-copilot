@@ -38,6 +38,15 @@ class ConversationMemory:
                 conversation_id,
             )
 
+    def list_conversations(self, limit: int = 50) -> list[Conversation]:
+        with self.postgres.get_session() as session:
+            statement = (
+                select(Conversation)
+                .order_by(Conversation.updated_at.desc())
+                .limit(limit)
+            )
+            return list(session.scalars(statement))
+
     def add_message(
         self,
         conversation_id: int,

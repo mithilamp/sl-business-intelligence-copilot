@@ -21,13 +21,14 @@ export default function QuestionForm({
 
         if (!question.trim()) return;
 
-        await onSubmit(question);
+        await onSubmit(question.trim());
+        setQuestion("");
     }
 
     return (
         <form
             onSubmit={handleSubmit}
-            className="rounded-[3px] border border-[#D9CFB8] bg-[#F3EEE3] p-6"
+            className="rounded-2xl border border-[#D9CFB8] bg-[#F8F5EE] p-4 shadow-sm sm:p-5"
         >
             <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[#79705C]">
                 Case Intake
@@ -43,8 +44,8 @@ export default function QuestionForm({
                         "repeating-linear-gradient(transparent, transparent 27px, #E4DCC6 28px)",
                     backgroundPosition: "0 4px",
                 }}
-                rows={4}
-                placeholder="Ask a question..."
+                rows={3}
+                placeholder="Ask about markets, investment, exports, policy, or the economy…"
                 value={question}
                 onChange={(e) =>
                     setQuestion(e.target.value)
@@ -60,7 +61,7 @@ export default function QuestionForm({
 
                 <button
                     type="submit"
-                    disabled={loading}
+                    disabled={loading || !question.trim()}
                     className="rounded-[3px] bg-[#1B1F27] px-6 py-3 font-mono text-sm uppercase tracking-[0.08em] text-[#F3EEE3] transition-colors hover:bg-[#2B6660] disabled:opacity-50"
                 >
                     {loading ? "Reviewing…" : "Submit Inquiry"}

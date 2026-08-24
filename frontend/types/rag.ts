@@ -5,6 +5,24 @@ export interface AskResponse {
   conversation_id: number;
 }
 
+export interface ConversationSummary {
+  id: number;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ConversationMessage {
+  id: number;
+  role: "user" | "assistant";
+  content: string;
+  created_at: string;
+}
+
+export interface ConversationDetail extends ConversationSummary {
+  messages: ConversationMessage[];
+}
+
 export interface Source {
   title: string;
   filename: string;

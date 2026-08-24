@@ -5,11 +5,35 @@ from app.land.vision import LandVisionResponseError
 from fastapi import UploadFile, File, HTTPException
 from pathlib import Path
 
-from app.api.schemas import BusinessAdviceRequest, BusinessAdviceResponse, QuestionRequest, QuestionResponse, SourceResponse
+from app.api.schemas import (
+    BusinessAdviceRequest,
+    BusinessAdviceResponse,
+    ConversationDetailResponse,
+    ConversationListItem,
+    ConversationMessageResponse,
+    QuestionRequest,
+    QuestionResponse,
+    SourceResponse,
+)
 from app.rag.rag_pipeline import RAGPipeline
 
 router = APIRouter()
 pipeline = RAGPipeline()
+
+
+def conversation_title(conversation) -> str:
+    if conversation.title:
+        return conversation.title
+
+    messages = pipeline.memory.get_recent_messages(
+        conversation_id=conversation.id,
+        limit=100,
+    )
+    first_question = next(
+        (message.content for message in messages if message.role == "user"),
+        None,
+    )
+    return first_question[:255] if first_question else "Untitled conversation"
 
 
 @router.post(
@@ -22,10 +46,12 @@ def ask(request: QuestionRequest):
     conversation_id = request.conversation_id
 
     if conversation_id is None:
-        conversation = pipeline.memory.create_conversation()
+        conversation = pipeline.memory.create_conversation(
+            title=request.question.strip()[:255]
+        )
         conversation_id = conversation.id
 
-    result = pipeline.ask(request.question, conversation_id=request.conversation_id)
+    result = pipeline.ask(request.question, conversation_id=conversation_id)
     sources = [
     SourceResponse(
         title=source.title,
@@ -45,6 +71,54 @@ def ask(request: QuestionRequest):
         answer=result.answer,
         sources=sources,
         conversation_id=conversation_id
+    )
+
+
+@router.get(
+    "/conversations",
+    response_model=list[ConversationListItem],
+)
+def conversations():
+    return [
+        ConversationListItem(
+            id=conversation.id,
+            title=conversation_title(conversation),
+            created_at=conversation.created_at,
+            updated_at=conversation.updated_at,
+        )
+        for conversation in pipeline.memory.list_conversations()
+    ]
+
+
+@router.get(
+    "/conversations/{conversation_id}",
+    response_model=ConversationDetailResponse,
+)
+def conversation_detail(conversation_id: int):
+    conversation = pipeline.memory.get_conversation(conversation_id)
+
+    if conversation is None:
+        raise HTTPException(status_code=404, detail="Conversation not found.")
+
+    messages = pipeline.memory.get_recent_messages(
+        conversation_id=conversation_id,
+        limit=100,
+    )
+
+    return ConversationDetailResponse(
+        id=conversation.id,
+        title=conversation_title(conversation),
+        created_at=conversation.created_at,
+        updated_at=conversation.updated_at,
+        messages=[
+            ConversationMessageResponse(
+                id=message.id,
+                role=message.role,
+                content=message.content,
+                created_at=message.created_at,
+            )
+            for message in messages
+        ],
     )
 
 @router.post(
