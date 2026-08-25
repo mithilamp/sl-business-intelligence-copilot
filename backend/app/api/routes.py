@@ -6,6 +6,8 @@ from fastapi import UploadFile, File, HTTPException
 from pathlib import Path
 
 from app.api.schemas import (
+    AgentRequest,
+    AgentResponse,
     BusinessAdviceRequest,
     BusinessAdviceResponse,
     ConversationDetailResponse,
@@ -15,10 +17,12 @@ from app.api.schemas import (
     QuestionResponse,
     SourceResponse,
 )
+from app.agents.router import AgentRouter
 from app.rag.rag_pipeline import RAGPipeline
 
 router = APIRouter()
 pipeline = RAGPipeline()
+agent_router = AgentRouter(pipeline=pipeline)
 
 
 def conversation_title(conversation) -> str:
@@ -71,6 +75,29 @@ def ask(request: QuestionRequest):
         answer=result.answer,
         sources=sources,
         conversation_id=conversation_id
+    )
+
+
+@router.post("/agent", response_model=AgentResponse)
+def agent(request: AgentRequest):
+    conversation_id = request.conversation_id
+    if conversation_id is None:
+        conversation = pipeline.memory.create_conversation(
+            title=request.question.strip()[:255]
+        )
+        conversation_id = conversation.id
+
+    result = agent_router.run(
+        question=request.question,
+        conversation_id=conversation_id,
+        land_report=request.land_report,
+    )
+    return AgentResponse(
+        question=result.question,
+        answer=result.answer,
+        selected_tool=result.tool,
+        routing_reason=result.reason,
+        conversation_id=result.conversation_id,
     )
 
 

@@ -3,8 +3,8 @@ from app.rag.rag_pipeline import RAGPipeline
 
 class RAGAgent:
 
-    def __init__(self):
-        self.pipeline = RAGPipeline()
+    def __init__(self, pipeline: RAGPipeline | None = None):
+        self.pipeline = pipeline or RAGPipeline()
 
 
     def run(
