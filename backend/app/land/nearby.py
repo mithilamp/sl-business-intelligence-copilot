@@ -1,5 +1,6 @@
 import requests
 from math import asin, cos, radians, sin, sqrt
+from app.core.langsmith import traceable
 
 
 class NearbyIntelligence:
@@ -19,6 +20,7 @@ class NearbyIntelligence:
         }
 
 
+    @traceable(name="Nearby OpenStreetMap Intelligence", run_type="tool", tags=["openstreetmap", "nearby"])
     def find_nearby(
         self,
         latitude: float,
