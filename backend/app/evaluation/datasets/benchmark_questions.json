@@ -1,51 +1,32 @@
 [
-  {
-    "id": "economy_001",
-    "question": "What are the main economic factors affecting Sri Lanka's business environment?",
-    "category": "economy",
-    "expected_sources": [
-      "Central Bank of Sri Lanka"
-    ]
-  },
-  {
-    "id": "investment_001",
-    "question": "Which sectors are promoted for foreign investment in Sri Lanka?",
-    "category": "investment",
-    "expected_sources": [
-      "Board of Investment"
-    ]
-  },
-  {
-    "id": "agriculture_001",
-    "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
-    "category": "agriculture",
-    "expected_sources": [
-      "Department of Agriculture"
-    ]
-  },
-  {
-    "id": "export_001",
-    "question": "Which Sri Lankan products have export potential?",
-    "category": "export",
-    "expected_sources": [
-      "Export Development Board"
-    ]
-  },
-  {
-    "id": "demographics_001",
-    "question": "How can population and employment data support business decisions?",
-    "category": "statistics",
-    "expected_sources": [
-      "Department of Census and Statistics"
-    ]
-  },
-  {
-    "id": "land_tourism_001",
-    "question": "Would this land be suitable for tourism development?",
-    "category": "land_business",
-    "expected_sources": [
-      "OpenStreetMap",
-      "Central Bank of Sri Lanka"
-    ]
-  }
+  {"id":"economy_001","question":"What are the main economic factors affecting Sri Lanka's business environment?","category":"economy","expected_sources":["Central Bank of Sri Lanka|CBSL"]},
+  {"id":"economy_002","question":"What does Sri Lanka's recent inflation trend mean for businesses?","category":"economy","expected_sources":["Central Bank of Sri Lanka|CBSL"]},
+  {"id":"economy_003","question":"How has Sri Lanka's economic growth outlook changed?","category":"economy","expected_sources":["Central Bank of Sri Lanka|CBSL","World Bank"]},
+  {"id":"economy_004","question":"What financial-system risks should a Sri Lankan investor monitor?","category":"economy","expected_sources":["Central Bank of Sri Lanka|CBSL"]},
+  {"id":"economy_005","question":"What policy conditions are associated with Sri Lanka's IMF programme?","category":"economy","expected_sources":["International Monetary Fund|IMF"]},
+  {"id":"investment_001","question":"Which sectors are promoted for foreign investment in Sri Lanka?","category":"investment","expected_sources":["Board of Investment|BOI"]},
+  {"id":"investment_002","question":"What incentives are available to investors in Sri Lanka?","category":"investment","expected_sources":["Board of Investment|BOI"]},
+  {"id":"investment_003","question":"What steps are required to establish a BOI project?","category":"investment","expected_sources":["Board of Investment|BOI"]},
+  {"id":"investment_004","question":"Which infrastructure and logistics opportunities are promoted to investors?","category":"investment","expected_sources":["Board of Investment|BOI"]},
+  {"id":"investment_005","question":"What risks should a foreign entrepreneur consider before investing in Sri Lanka?","category":"investment","expected_sources":["Board of Investment|BOI","Central Bank of Sri Lanka|CBSL"]},
+  {"id":"agriculture_001","question":"What factors should be considered before starting an agricultural business in Sri Lanka?","category":"agriculture","expected_sources":["Department of Agriculture"]},
+  {"id":"agriculture_002","question":"How should a farmer select crops for Sri Lankan growing conditions?","category":"agriculture","expected_sources":["Department of Agriculture"]},
+  {"id":"agriculture_003","question":"What guidance is available on soil and nutrient management?","category":"agriculture","expected_sources":["Department of Agriculture","Food and Agriculture Organization|FAO"]},
+  {"id":"agriculture_004","question":"What opportunities exist for value-added agricultural products?","category":"agriculture","expected_sources":["Department of Agriculture","Export Development Board|EDB"]},
+  {"id":"agriculture_005","question":"What climate and food-system risks affect Sri Lankan agriculture?","category":"agriculture","expected_sources":["Food and Agriculture Organization|FAO","Department of Agriculture"]},
+  {"id":"export_001","question":"Which Sri Lankan products have export potential?","category":"export","expected_sources":["Export Development Board|EDB"]},
+  {"id":"export_002","question":"What should a new Sri Lankan exporter consider before entering a foreign market?","category":"export","expected_sources":["Export Development Board|EDB"]},
+  {"id":"export_003","question":"What export opportunities exist for rubber and polymer products?","category":"export","expected_sources":["Export Development Board|EDB"]},
+  {"id":"export_004","question":"What customs information is important when planning imports or exports?","category":"export","expected_sources":["Sri Lanka Customs|Customs"]},
+  {"id":"export_005","question":"Which services and knowledge industries have export potential?","category":"export","expected_sources":["Export Development Board|EDB","Board of Investment|BOI"]},
+  {"id":"statistics_001","question":"How can population and employment data support business decisions?","category":"statistics","expected_sources":["Department of Census and Statistics|DCS"]},
+  {"id":"statistics_002","question":"What demographic data should be reviewed before opening a regional business?","category":"statistics","expected_sources":["Department of Census and Statistics|DCS"]},
+  {"id":"statistics_003","question":"How can labour-force statistics help with workforce planning?","category":"statistics","expected_sources":["Department of Census and Statistics|DCS"]},
+  {"id":"statistics_004","question":"What regional indicators help estimate local market demand?","category":"statistics","expected_sources":["Department of Census and Statistics|DCS"]},
+  {"id":"statistics_005","question":"Which official statistics describe Sri Lanka's agriculture sector?","category":"statistics","expected_sources":["Department of Census and Statistics|DCS","Department of Agriculture"]},
+  {"id":"tourism_001","question":"What is the outlook for Sri Lanka's tourism sector?","category":"tourism","expected_sources":["Central Bank of Sri Lanka|CBSL","Export Development Board|EDB"]},
+  {"id":"tourism_002","question":"What opportunities exist in nautical tourism in Sri Lanka?","category":"tourism","expected_sources":["Export Development Board|EDB"]},
+  {"id":"tourism_003","question":"What economic indicators should a tourism investor monitor?","category":"tourism","expected_sources":["Central Bank of Sri Lanka|CBSL"]},
+  {"id":"tax_001","question":"What tax information should a new Sri Lankan business verify?","category":"tax_and_compliance","expected_sources":["Inland Revenue Department|IRD"]},
+  {"id":"cross_domain_001","question":"Explain Sri Lanka's business environment to a foreign entrepreneur using economic and investment evidence.","category":"cross_domain","expected_sources":["Central Bank of Sri Lanka|CBSL","Board of Investment|BOI"]}
 ]
