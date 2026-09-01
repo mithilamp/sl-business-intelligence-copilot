@@ -1,6 +1,6 @@
 # Retrieval evaluation report
 
-Generated: 2026-08-25T18:23:31.641544+00:00
+Generated: 2026-08-27T19:04:42.278563+00:00
 
 ## Baseline comparison
 

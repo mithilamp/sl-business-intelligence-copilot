@@ -3,14 +3,41 @@ import ScoreGauge from "./ScoreGauge";
 
 interface SourceListProps {
   sources: Source[];
+  compact?: boolean;
 }
 
 export default function SourceList({
   sources,
+  compact = false,
 }: SourceListProps) {
 
   if (sources.length === 0) {
     return null;
+  }
+
+  if (compact) {
+    return (
+      <details className="group border-t border-[#D8D2C2] pt-3">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-xs font-semibold text-[#45665B] marker:content-none">
+          <span className="flex items-center gap-2"><span aria-hidden="true">◉</span>{sources.length} {sources.length === 1 ? "source" : "sources"} used</span>
+          <span className="text-[10px] uppercase tracking-[0.12em] text-[#7B8A83] group-open:hidden">View</span>
+          <span className="hidden text-[10px] uppercase tracking-[0.12em] text-[#7B8A83] group-open:inline">Hide</span>
+        </summary>
+        <ol className="mt-3 space-y-2">
+          {sources.map((source, index) => (
+            <li key={`${source.filename}-${index}`} className="rounded-xl bg-[#F4F1E9]/80 px-3 py-2.5">
+              <div className="flex items-start gap-2.5">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#DCEAE4] text-[10px] font-semibold text-[#28604E]">{index + 1}</span>
+                <div className="min-w-0">
+                  {source.document_url ? <a href={source.document_url} target="_blank" rel="noopener noreferrer" className="block truncate text-xs font-semibold text-[#244F46] underline decoration-[#AFC5BC] underline-offset-2 hover:decoration-[#244F46]">{source.title}</a> : <p className="truncate text-xs font-semibold text-[#244F46]">{source.title}</p>}
+                  <p className="mt-0.5 truncate text-[11px] text-[#6D756F]">{[source.source, source.category, source.published_date].filter(Boolean).join(" · ")}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </details>
+    );
   }
 
   return (

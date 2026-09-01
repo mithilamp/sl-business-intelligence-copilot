@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import BusinessAdviceCard from "@/components/BusinessAdviceCard";
 import LandAnalysisForm from "@/components/LandAnalysisForm";
 import LandEvidenceSummary from "@/components/LandEvidenceSummary";
@@ -37,6 +37,7 @@ export default function Home() {
   const [landAnalysis, setLandAnalysis] = useState<LandAnalysisResponse | null>(null);
   const [selectedLandReport, setSelectedLandReport] = useState<LandBusinessReport | null>(null);
   const [conversationId, setConversationId] = useState<number | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const refreshConversations = useCallback(async () => {
     try {
@@ -75,6 +76,12 @@ export default function Home() {
     }, 0);
     return () => window.clearTimeout(timer);
   }, [openConversation, refreshConversations]);
+
+  useEffect(() => {
+    if (mode === "ask" && messages.length > 0) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }, [answer, loading, messages, mode]);
 
   async function handleQuestion(question: string) {
     setLoading(true);
@@ -143,6 +150,7 @@ export default function Home() {
 
   const currentConversation = conversations.find((item) => item.id === conversationId);
   const activeMode = modes.find((item) => item.id === mode)!;
+  const latestAssistantMessageId = [...messages].reverse().find((message) => message.role === "assistant")?.id;
 
   return (
     <main className="min-h-screen bg-[#F4F1E9] text-[#18201F]">
@@ -165,9 +173,9 @@ export default function Home() {
           <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 pb-3 sm:px-6">{modes.map((item) => <button key={item.id} onClick={() => { setMode(item.id); setError(null); }} className={`whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition ${mode === item.id ? "bg-[#183D37] text-white shadow-sm" : "text-[#5E6863] hover:bg-white/70"}`}>{item.label}</button>)}</div>
         </header>
 
-        <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10">
+        <div className={mode === "ask" ? "mx-auto flex h-[calc(100dvh-109px)] max-w-4xl flex-col overflow-hidden px-4 pt-5 sm:px-6 sm:pt-7" : "mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10"}>
           {error && <div role="alert" className="mb-5 flex items-start justify-between gap-4 rounded-xl border border-[#E1B9AE] bg-[#FFF1ED] p-4 text-sm text-[#873D2E]"><span>{error}</span><button onClick={() => setError(null)} aria-label="Dismiss error">×</button></div>}
-          {mode === "ask" && <section>{messages.length === 0 ? <div className="mb-8 py-8 text-center sm:py-14"><div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#DCEAE4] text-2xl">✦</div><h1 className="mt-5 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">How can I help your decision?</h1><p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#69736D] sm:text-base">Ask a question about Sri Lankan markets, investment, exports, regulations, or economic conditions.</p><div className="mx-auto mt-7 grid max-w-2xl gap-2 sm:grid-cols-2">{["Which sectors are promoted for foreign investment?", "What should I consider before starting an export business?"].map((prompt) => <button key={prompt} onClick={() => void handleQuestion(prompt)} disabled={loading} className="rounded-xl border border-[#D8D2C2] bg-white/65 p-4 text-left text-sm leading-5 transition hover:border-[#799B8E] hover:bg-white disabled:opacity-50">{prompt}</button>)}</div></div> : <div className="mb-7 space-y-6" aria-live="polite">{messages.map((message) => <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}><div className={message.role === "user" ? "max-w-[86%] rounded-2xl rounded-br-sm bg-[#183D37] px-4 py-3 text-sm leading-6 text-white sm:max-w-[75%]" : "max-w-full whitespace-pre-wrap rounded-2xl rounded-bl-sm border border-[#D8D2C2] bg-white/70 px-5 py-4 text-sm leading-7 text-[#27312D] shadow-sm"}>{message.content}</div></div>)}{loading && <div className="flex justify-start"><div className="flex items-center gap-2 rounded-2xl border border-[#D8D2C2] bg-white/70 px-5 py-4 text-sm text-[#69736D]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#3E8B6C]" />Reviewing sources and preparing an answer…</div></div>}</div>}<QuestionForm onSubmit={handleQuestion} loading={loading} />{answer && <div className="mt-6"><SourceList sources={answer.sources} /></div>}</section>}
+          {mode === "ask" && <section className="flex min-h-0 flex-1 flex-col"><div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pb-6 pr-1">{messages.length === 0 ? <div className="py-6 text-center sm:py-12"><div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#DCEAE4] text-2xl">✦</div><h1 className="mt-5 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">How can I help your decision?</h1><p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#69736D] sm:text-base">Ask a question about Sri Lankan markets, investment, exports, regulations, or economic conditions.</p><div className="mx-auto mt-7 grid max-w-2xl gap-2 sm:grid-cols-2">{["Which sectors are promoted for foreign investment?", "What should I consider before starting an export business?"].map((prompt) => <button key={prompt} onClick={() => void handleQuestion(prompt)} disabled={loading} className="rounded-xl border border-[#D8D2C2] bg-white/65 p-4 text-left text-sm leading-5 transition hover:border-[#799B8E] hover:bg-white disabled:opacity-50">{prompt}</button>)}</div></div> : <div className="space-y-6" aria-live="polite">{messages.map((message) => <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}><div className={message.role === "user" ? "max-w-[86%] rounded-2xl rounded-br-sm bg-[#183D37] px-4 py-3 text-sm leading-6 text-white sm:max-w-[75%]" : "max-w-full rounded-2xl rounded-bl-sm border border-[#D8D2C2] bg-white/70 px-5 py-4 text-sm leading-7 text-[#27312D] shadow-sm"}><div className="whitespace-pre-wrap">{message.content}</div>{message.role === "assistant" && message.id === latestAssistantMessageId && answer && <div className="mt-4"><SourceList sources={answer.sources} compact /></div>}</div></div>)}{loading && <div className="flex justify-start"><div className="flex items-center gap-2 rounded-2xl border border-[#D8D2C2] bg-white/70 px-5 py-4 text-sm text-[#69736D]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#3E8B6C]" />Reviewing sources and preparing an answer…</div></div>}</div>}<div ref={messagesEndRef} aria-hidden="true" /></div><div className="shrink-0 bg-[#F4F1E9] pb-[max(1rem,env(safe-area-inset-bottom))] pt-3"><QuestionForm onSubmit={handleQuestion} loading={loading} /></div></section>}
           {mode === "business" && <section className="space-y-5">{selectedLandReport && <LandEvidenceSummary report={selectedLandReport} onRemove={() => setSelectedLandReport(null)} />}<QuestionForm onSubmit={handleQuestion} loading={loading} />{loading && <div className="rounded-xl border border-[#D8D2C2] bg-white/60 p-5 text-sm text-[#69736D]">Building a recommendation from the available evidence…</div>}{businessAdvice && <div className="space-y-6"><BusinessAdviceCard result={businessAdvice} /><SourceList sources={businessAdvice.sources} /></div>}</section>}
           {mode === "land" && <section className="space-y-7"><LandAnalysisForm onSubmit={handleLandAnalysis} loading={loading} />{loading && <div className="rounded-xl border border-[#D8D2C2] bg-white/60 p-5 text-sm text-[#69736D]">Reading the document, resolving the location, and gathering nearby intelligence…</div>}{landAnalysis && <div className="space-y-8">{landAnalysis.analysis.map((page, index) => <LandReportCard key={index} page={page} pageNumber={index + 1} onAskAdvisor={askAdvisorAboutLand} />)}</div>}</section>}
         </div>
