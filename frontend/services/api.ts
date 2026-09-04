@@ -22,7 +22,7 @@ async function requestJson<T>(url: string, init?: RequestInit): Promise<T> {
 }
 
 export async function ask(question: string, conversationId?: number | null): Promise<AskResponse> {
-  return requestJson<AskResponse>("/ask", {
+  return requestJson<AskResponse>("/agent", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

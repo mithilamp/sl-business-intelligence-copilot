@@ -95,6 +95,19 @@ def agent(request: AgentRequest):
     return AgentResponse(
         question=result.question,
         answer=result.answer,
+        sources=[
+            SourceResponse(
+                title=source.title,
+                filename=source.filename,
+                source=source.source,
+                category=source.category,
+                document_type=source.document_type,
+                published_date=source.published_date,
+                document_url=source.document_url,
+                chunks=source.chunks,
+            )
+            for source in result.sources
+        ],
         selected_tool=result.tool,
         routing_reason=result.reason,
         conversation_id=result.conversation_id,

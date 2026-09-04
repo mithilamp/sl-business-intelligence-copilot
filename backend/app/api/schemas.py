@@ -65,6 +65,7 @@ class AgentRequest(BaseModel):
 class AgentResponse(BaseModel):
     question: str
     answer: str
+    sources: list[SourceResponse]
     selected_tool: str
     routing_reason: str
     conversation_id: int

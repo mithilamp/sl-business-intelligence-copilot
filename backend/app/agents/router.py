@@ -9,6 +9,7 @@ from app.land.models import LandBusinessReport
 from app.llm.base import BaseLLM
 from app.llm.openai_llm import OpenAILLM
 from app.rag.rag_pipeline import RAGPipeline
+from app.rag.models import Source
 
 
 class AgentDecision(BaseModel):
@@ -21,6 +22,7 @@ class AgentResult(BaseModel):
     reason: str
     question: str
     answer: str
+    sources: list[Source] = Field(default_factory=list)
     conversation_id: int
 
 
@@ -85,8 +87,11 @@ Use conversation history to resolve follow-up intent. Choose business_advisor wh
                 land_report=land_report,
             )
             answer = result.recommendation.model_dump_json(indent=2)
+            sources = self._sources_from_chunks(result.chunks)
         else:
-            answer = self.rag_agent.run(contextualized_question).answer
+            result = self.rag_agent.run(contextualized_question)
+            answer = result.answer
+            sources = result.sources
 
         self.pipeline.memory.add_message(conversation_id, "user", question)
         self.pipeline.memory.add_message(conversation_id, "assistant", answer)
@@ -96,5 +101,29 @@ Use conversation history to resolve follow-up intent. Choose business_advisor wh
             reason=decision.reason,
             question=question,
             answer=answer,
+            sources=sources,
             conversation_id=conversation_id,
         )
+
+    @staticmethod
+    def _sources_from_chunks(chunks) -> list[Source]:
+        sources: dict[int, Source] = {}
+        for item in chunks:
+            chunk = item.chunk
+            document = chunk.document
+            if document.id not in sources:
+                sources[document.id] = Source(
+                    title=document.title,
+                    filename=document.filename,
+                    source=document.source,
+                    category=document.category,
+                    document_type=document.document_type,
+                    published_date=document.published_date,
+                    document_url=document.document_url,
+                    chunks=[],
+                )
+            sources[document.id].chunks.append({
+                "chunk_index": chunk.chunk_index,
+                "relevance_score": round(float(item.score), 4),
+            })
+        return list(sources.values())

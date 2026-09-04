@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
 from app.agents.router import AgentDecision, AgentRouter
-from app.rag.models import RAGResults
+from app.rag.models import RAGResults, Source
 
 
 def _router(decision: AgentDecision):
@@ -19,14 +19,16 @@ def test_agent_selects_knowledge_search_and_records_memory():
     router, pipeline, _ = _router(
         AgentDecision(tool="knowledge_search", reason="Needs official evidence")
     )
+    source = Source(title="BOI Report", filename="boi.pdf", source="BOI")
     router.rag_agent.run = Mock(
-        return_value=RAGResults(question="Q", answer="Grounded answer", sources=[])
+        return_value=RAGResults(question="Q", answer="Grounded answer", sources=[source])
     )
 
     result = router.run("What sectors are promoted?", conversation_id=7)
 
     assert result.tool == "knowledge_search"
     assert result.answer == "Grounded answer"
+    assert result.sources == [source]
     assert pipeline.memory.add_message.call_count == 2
 
 
@@ -37,6 +39,7 @@ def test_agent_selects_advisor_with_land_report():
     recommendation = Mock()
     recommendation.model_dump_json.return_value = '{"summary":"Review access"}'
     advisor.recommend.return_value.recommendation = recommendation
+    advisor.recommend.return_value.chunks = []
     report = {"property_overview": {}, "business_assessment": {}, "evidence_by_source": {}}
 
     result = router.run("Is tourism suitable?", conversation_id=9, land_report=report)

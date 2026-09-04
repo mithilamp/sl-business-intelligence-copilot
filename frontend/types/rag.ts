@@ -2,6 +2,8 @@ export interface AskResponse {
   question: string;
   answer: string;
   sources: Source[];
+  selected_tool: "knowledge_search" | "business_advisor";
+  routing_reason: string;
   conversation_id: number;
 }
 
