@@ -258,6 +258,8 @@ npm run build
 
 ## Deployment
 
+Local browser deployment satisfies the course requirement. A publicly reachable application URL is optional. The local frontend runs at `http://localhost:3000` and the API at `http://localhost:8000`.
+
 The API and frontend can be deployed separately, with the backend connected to a production PostgreSQL/pgvector database. Configure these environment variables on the hosting platforms:
 
 ```text
@@ -274,7 +276,19 @@ LANGSMITH_API_KEY=your-production-secret
 
 For multiple allowed frontends, provide comma-separated values in `CORS_ORIGINS`. Do not add trailing slashes. The document collection must be ingested into the production database before the RAG endpoints are tested.
 
-Before submission, record the live frontend and API URLs here and verify Ask AI, conversation history, sources, land upload, and Business Advisor from the deployed interface.
+If publicly hosting the application, record the frontend and API URLs here and verify Ask AI, conversation history, sources, land upload, and Business Advisor from that deployment.
+
+## Final submission materials
+
+All prepared deliverables are available in [submission](submission/README.md):
+
+- [Four-page report PDF](submission/Sri_Lanka_BI_Copilot_Report_4_pages.pdf) and [editable Word report](submission/Sri_Lanka_BI_Copilot_Report_4_pages.docx)
+- [Final presentation](submission/Sri_Lanka_Business_Intelligence_Copilot_Final_2026-09-04_v2.pptx) and [presentation clarifications](submission/PRESENTATION_CORRECTIONS.md)
+- [Agent trace and interface evidence](submission/evidence/)
+- [Retrieval evaluation report](submission/evidence/evaluation_summary.md), detailed results and benchmark datasets
+- [Submission audit and verification notes](submission/SUBMISSION_CHECKLIST.md)
+
+The report follows the requested four-page length. The original brief contains a three-page maximum annotation, so confirm the accepted limit before submitting the report.
 
 ## Responsible use
 

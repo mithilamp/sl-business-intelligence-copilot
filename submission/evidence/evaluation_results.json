@@ -1,0 +1,4085 @@
+{
+  "generated_at": "2026-08-27T19:04:42.278563+00:00",
+  "benchmark_version": "1.0",
+  "systems": {
+    "vector_only": {
+      "total": 30,
+      "hit_rate_at_3": 0.7,
+      "mean_reciprocal_rank": 0.6111,
+      "mean_precision_at_3": 0.5556,
+      "failures": [
+        {
+          "id": "economy_005",
+          "question": "What policy conditions are associated with Sri Lanka's IMF programme?",
+          "category": "economy",
+          "expected_sources": [
+            "International Monetary Fund|IMF"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "News Survey 2024 04",
+              "filename": "News_Survey_2024_04.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_04.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "International Monetary Fund|IMF"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "agriculture_001",
+          "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Agriculture"
+            ],
+            "returned_authorities": [
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "export_004",
+          "question": "What customs information is important when planning imports or exports?",
+          "category": "export",
+          "expected_sources": [
+            "Sri Lanka Customs|Customs"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Indo-Sri-Lanka-Fta",
+              "filename": "Indo-Sri-Lanka-FTA.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Indo-Sri-Lanka-FTA.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Sri Lanka Customs|Customs"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "statistics_001",
+          "question": "How can population and employment data support business decisions?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-19Vhp069Heskmont2Tasz2Wzy0Nosc4Fu",
+              "filename": "google-drive-19Vhp069heskmonT2TAsz2wzy0nOSC4fU.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=19Vhp069heskmonT2TAsz2wzy0nOSC4fU&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_002",
+          "question": "What demographic data should be reviewed before opening a regional business?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "News Survey 2024 03",
+              "filename": "News_Survey_2024_03.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_03.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "statistics_003",
+          "question": "How can labour-force statistics help with workforce planning?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-16Hex2Q68Qyic-Kwdo3Bmdeftrr-Tcwqd",
+              "filename": "google-drive-16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-125Ipvueqn-Ssabjuujqybdjnibeqjpx ",
+              "filename": "google-drive-125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-19Vhp069Heskmont2Tasz2Wzy0Nosc4Fu",
+              "filename": "google-drive-19Vhp069heskmonT2TAsz2wzy0nOSC4fU.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=19Vhp069heskmonT2TAsz2wzy0nOSC4fU&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_004",
+          "question": "What regional indicators help estimate local market demand?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Press 20260817 Sl Pmi 2026 July E",
+              "filename": "press_20260817_sl_pmi_2026_july_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Business Activity",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_sl_pmi_2026_july_e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Press 20260817 Land Valuation Indicator First Half Of 2026 E",
+              "filename": "press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tourism_003",
+          "question": "What economic indicators should a tourism investor monitor?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tax_001",
+          "question": "What tax information should a new Sri Lankan business verify?",
+          "category": "tax_and_compliance",
+          "expected_sources": [
+            "Inland Revenue Department|IRD"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "News Survey 2024 03",
+              "filename": "News_Survey_2024_03.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_03.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Inland Revenue Department|IRD"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        }
+      ],
+      "category_summary": {
+        "agriculture": {
+          "total": 5,
+          "hits": 4,
+          "hit_rate_at_3": 0.8
+        },
+        "cross_domain": {
+          "total": 1,
+          "hits": 1,
+          "hit_rate_at_3": 1.0
+        },
+        "economy": {
+          "total": 5,
+          "hits": 4,
+          "hit_rate_at_3": 0.8
+        },
+        "export": {
+          "total": 5,
+          "hits": 4,
+          "hit_rate_at_3": 0.8
+        },
+        "investment": {
+          "total": 5,
+          "hits": 5,
+          "hit_rate_at_3": 1.0
+        },
+        "statistics": {
+          "total": 5,
+          "hits": 1,
+          "hit_rate_at_3": 0.2
+        },
+        "tax_and_compliance": {
+          "total": 1,
+          "hits": 0,
+          "hit_rate_at_3": 0.0
+        },
+        "tourism": {
+          "total": 3,
+          "hits": 2,
+          "hit_rate_at_3": 0.6667
+        }
+      },
+      "results": [
+        {
+          "id": "economy_001",
+          "question": "What are the main economic factors affecting Sri Lanka's business environment?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 3,
+            "reciprocal_rank": 0.3333,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "economy_002",
+          "question": "What does Sri Lanka's recent inflation trend mean for businesses?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-18Vk9Mjsbz3D1Riwuokdbscjfdny -Esa",
+              "filename": "google-drive-18vK9mJsBz3D1RiwuOKDBScJFdNy_-esA.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=18vK9mJsBz3D1RiwuOKDBScJFdNy_-esA&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "economy_003",
+          "question": "How has Sri Lanka's economic growth outlook changed?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "World Bank"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "economy_004",
+          "question": "What financial-system risks should a Sri Lankan investor monitor?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Speech 20260602 Launch Of Be Scam Proof Month E",
+              "filename": "speech_20260602_launch_of_be_scam_proof_month_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Speech",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/speech_20260602_launch_of_be_scam_proof_month_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "News Survey 2024 03",
+              "filename": "News_Survey_2024_03.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_03.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "economy_005",
+          "question": "What policy conditions are associated with Sri Lanka's IMF programme?",
+          "category": "economy",
+          "expected_sources": [
+            "International Monetary Fund|IMF"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "News Survey 2024 04",
+              "filename": "News_Survey_2024_04.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_04.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "International Monetary Fund|IMF"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "investment_001",
+          "question": "Which sectors are promoted for foreign investment in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_002",
+          "question": "What incentives are available to investors in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2021",
+              "filename": "Annual-Report-2021.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2021",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2021.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_003",
+          "question": "What steps are required to establish a BOI project?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_004",
+          "question": "Which infrastructure and logistics opportunities are promoted to investors?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_005",
+          "question": "What risks should a foreign entrepreneur consider before investing in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI",
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "agriculture_001",
+          "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Agriculture"
+            ],
+            "returned_authorities": [
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "agriculture_002",
+          "question": "How should a farmer select crops for Sri Lankan growing conditions?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-1Elw Wcgjbe5Rnq Hfjet Lkbgugxtqpe",
+              "filename": "google-drive-1Elw_WcGjBe5RnQ_hfJet_lkBgUGXtQpe.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Elw_WcGjBe5RnQ_hfJet_lkBgUGXtQpe&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-1Uztf-Ut7L4Tpx-Grqta8E Rrpcr 5Khp",
+              "filename": "google-drive-1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "agriculture_003",
+          "question": "What guidance is available on soil and nutrient management?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture",
+            "Food and Agriculture Organization|FAO"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-12Fjtzhpbfjdm5Nj Meq3Mjd V1Ofodu6",
+              "filename": "google-drive-12fJTZhPBFjDM5Nj_mEq3mJd_v1OFODU6.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=12fJTZhPBFjDM5Nj_mEq3mJd_v1OFODU6&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-1Qrmitbwimkjlkar4Dfpaolpc Oxyir4X",
+              "filename": "google-drive-1QrMITBWIMkJLKAr4dfPAolPc_OxyIR4x.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1QrMITBWIMkJLKAr4dfPAolPc_OxyIR4x&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "agriculture_004",
+          "question": "What opportunities exist for value-added agricultural products?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture",
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "agriculture_005",
+          "question": "What climate and food-system risks affect Sri Lankan agriculture?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Food and Agriculture Organization|FAO",
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-1Kfb59W-Lnrosjqxquufdmytcscogm8Az",
+              "filename": "google-drive-1KFb59W-lNROsjqxquUfdmytCsCogm8AZ.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1KFb59W-lNROsjqxquUfdmytCsCogm8AZ&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-18Ydmidr0Bw1Gdntwhsfshbdk0Yxaczkp",
+              "filename": "google-drive-18YdmiDR0BW1gDNtWhSFSHBdK0YXACZkp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=18YdmiDR0BW1gDNtWhSFSHBdK0YXACZkp&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-1Ca Px2Vuo2Ooklwqggiqhixtjhz8B8Nb",
+              "filename": "google-drive-1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "export_001",
+          "question": "Which Sri Lankan products have export potential?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2020-Dec",
+              "filename": "business-lanka-2020-dec.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2020",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2020-dec.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "export_002",
+          "question": "What should a new Sri Lankan exporter consider before entering a foreign market?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Indo-Sri-Lanka-Fta",
+              "filename": "Indo-Sri-Lanka-FTA.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Indo-Sri-Lanka-FTA.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "export_003",
+          "question": "What export opportunities exist for rubber and polymer products?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "export_004",
+          "question": "What customs information is important when planning imports or exports?",
+          "category": "export",
+          "expected_sources": [
+            "Sri Lanka Customs|Customs"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Indo-Sri-Lanka-Fta",
+              "filename": "Indo-Sri-Lanka-FTA.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Indo-Sri-Lanka-FTA.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Sri Lanka Customs|Customs"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "export_005",
+          "question": "Which services and knowledge industries have export potential?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB",
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "statistics_001",
+          "question": "How can population and employment data support business decisions?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-19Vhp069Heskmont2Tasz2Wzy0Nosc4Fu",
+              "filename": "google-drive-19Vhp069heskmonT2TAsz2wzy0nOSC4fU.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=19Vhp069heskmonT2TAsz2wzy0nOSC4fU&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_002",
+          "question": "What demographic data should be reviewed before opening a regional business?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "News Survey 2024 03",
+              "filename": "News_Survey_2024_03.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_03.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "statistics_003",
+          "question": "How can labour-force statistics help with workforce planning?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-16Hex2Q68Qyic-Kwdo3Bmdeftrr-Tcwqd",
+              "filename": "google-drive-16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-125Ipvueqn-Ssabjuujqybdjnibeqjpx ",
+              "filename": "google-drive-125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-19Vhp069Heskmont2Tasz2Wzy0Nosc4Fu",
+              "filename": "google-drive-19Vhp069heskmonT2TAsz2wzy0nOSC4fU.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=19Vhp069heskmonT2TAsz2wzy0nOSC4fU&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_004",
+          "question": "What regional indicators help estimate local market demand?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Press 20260817 Sl Pmi 2026 July E",
+              "filename": "press_20260817_sl_pmi_2026_july_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Business Activity",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_sl_pmi_2026_july_e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Press 20260817 Land Valuation Indicator First Half Of 2026 E",
+              "filename": "press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_005",
+          "question": "Which official statistics describe Sri Lanka's agriculture sector?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS",
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Google-Drive-125Ipvueqn-Ssabjuujqybdjnibeqjpx ",
+              "filename": "google-drive-125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=125IPvueQN-ssAbjUuJqYbdjNIBEQJpX_&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Google-Drive-19Vhp069Heskmont2Tasz2Wzy0Nosc4Fu",
+              "filename": "google-drive-19Vhp069heskmonT2TAsz2wzy0nOSC4fU.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=19Vhp069heskmonT2TAsz2wzy0nOSC4fU&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Google-Drive-16A 06Mcb4Pkinp79Zq5Ymoxvhw9Au6As",
+              "filename": "google-drive-16a_06McB4pKiNP79zq5ymOxVhw9Au6AS.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=16a_06McB4pKiNP79zq5ymOxVhw9Au6AS&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "tourism_001",
+          "question": "What is the outlook for Sri Lanka's tourism sector?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "tourism_002",
+          "question": "What opportunities exist in nautical tourism in Sri Lanka?",
+          "category": "tourism",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "tourism_003",
+          "question": "What economic indicators should a tourism investor monitor?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tax_001",
+          "question": "What tax information should a new Sri Lankan business verify?",
+          "category": "tax_and_compliance",
+          "expected_sources": [
+            "Inland Revenue Department|IRD"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "News Survey 2024 03",
+              "filename": "News_Survey_2024_03.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_03.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Inland Revenue Department|IRD"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "cross_domain_001",
+          "question": "Explain Sri Lanka's business environment to a foreign entrepreneur using economic and investment evidence.",
+          "category": "cross_domain",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": null,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            },
+            {
+              "rank": 2,
+              "score": null,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": null,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.3333
+          }
+        }
+      ]
+    },
+    "vector_plus_reranker": {
+      "total": 30,
+      "hit_rate_at_3": 0.6667,
+      "mean_reciprocal_rank": 0.6,
+      "mean_precision_at_3": 0.4,
+      "failures": [
+        {
+          "id": "economy_001",
+          "question": "What are the main economic factors affecting Sri Lanka's business environment?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 5.1298,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 3.636,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 3.2822,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "economy_005",
+          "question": "What policy conditions are associated with Sri Lanka's IMF programme?",
+          "category": "economy",
+          "expected_sources": [
+            "International Monetary Fund|IMF"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 2.766,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 2.1501,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 1.9656,
+              "title": "News Survey 2024 04",
+              "filename": "News_Survey_2024_04.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_04.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "International Monetary Fund|IMF"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "agriculture_001",
+          "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 0.6562,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 0.2719,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Agriculture"
+            ],
+            "returned_authorities": [
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "export_004",
+          "question": "What customs information is important when planning imports or exports?",
+          "category": "export",
+          "expected_sources": [
+            "Sri Lanka Customs|Customs"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -0.0098,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -0.479,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Sri Lanka Customs|Customs"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "statistics_001",
+          "question": "How can population and employment data support business decisions?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -8.4011,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -9.4121,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -9.5035,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_002",
+          "question": "What demographic data should be reviewed before opening a regional business?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -6.672,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_003",
+          "question": "How can labour-force statistics help with workforce planning?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -5.4958,
+              "title": "Google-Drive-16Hex2Q68Qyic-Kwdo3Bmdeftrr-Tcwqd",
+              "filename": "google-drive-16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -6.0709,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -7.4863,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_004",
+          "question": "What regional indicators help estimate local market demand?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -6.2245,
+              "title": "Google-Drive-1Uztf-Ut7L4Tpx-Grqta8E Rrpcr 5Khp",
+              "filename": "google-drive-1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -6.6207,
+              "title": "Google-Drive-1Duhyacrlh7Tzepzkx Hety4E792Ojscj",
+              "filename": "google-drive-1DUhyacRlH7TzepzkX_hEtY4e792OJsCj.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1DUhyacRlH7TzepzkX_hEtY4e792OJsCj&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": -9.0048,
+              "title": "Press 20260817 Land Valuation Indicator First Half Of 2026 E",
+              "filename": "press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tourism_003",
+          "question": "What economic indicators should a tourism investor monitor?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -1.6819,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -2.2584,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -4.3275,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tax_001",
+          "question": "What tax information should a new Sri Lankan business verify?",
+          "category": "tax_and_compliance",
+          "expected_sources": [
+            "Inland Revenue Department|IRD"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 1.3275,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -2.6222,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Inland Revenue Department|IRD"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        }
+      ],
+      "category_summary": {
+        "agriculture": {
+          "total": 5,
+          "hits": 4,
+          "hit_rate_at_3": 0.8
+        },
+        "cross_domain": {
+          "total": 1,
+          "hits": 1,
+          "hit_rate_at_3": 1.0
+        },
+        "economy": {
+          "total": 5,
+          "hits": 3,
+          "hit_rate_at_3": 0.6
+        },
+        "export": {
+          "total": 5,
+          "hits": 4,
+          "hit_rate_at_3": 0.8
+        },
+        "investment": {
+          "total": 5,
+          "hits": 5,
+          "hit_rate_at_3": 1.0
+        },
+        "statistics": {
+          "total": 5,
+          "hits": 1,
+          "hit_rate_at_3": 0.2
+        },
+        "tax_and_compliance": {
+          "total": 1,
+          "hits": 0,
+          "hit_rate_at_3": 0.0
+        },
+        "tourism": {
+          "total": 3,
+          "hits": 2,
+          "hit_rate_at_3": 0.6667
+        }
+      },
+      "results": [
+        {
+          "id": "economy_001",
+          "question": "What are the main economic factors affecting Sri Lanka's business environment?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 5.1298,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 3.636,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 3.2822,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "economy_002",
+          "question": "What does Sri Lanka's recent inflation trend mean for businesses?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 2.7078,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 2.103,
+              "title": "News Survey 2024 02",
+              "filename": "News_Survey_2024_02.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_02.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 1.3842,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "economy_003",
+          "question": "How has Sri Lanka's economic growth outlook changed?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "World Bank"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 5.6037,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 5.5148,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 4.699,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "economy_004",
+          "question": "What financial-system risks should a Sri Lankan investor monitor?",
+          "category": "economy",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.5303,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "economy_005",
+          "question": "What policy conditions are associated with Sri Lanka's IMF programme?",
+          "category": "economy",
+          "expected_sources": [
+            "International Monetary Fund|IMF"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 2.766,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 2.1501,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 1.9656,
+              "title": "News Survey 2024 04",
+              "filename": "News_Survey_2024_04.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_04.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "International Monetary Fund|IMF"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "investment_001",
+          "question": "Which sectors are promoted for foreign investment in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 7.3107,
+              "title": "Annual-Report-2019",
+              "filename": "Annual-Report-2019.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2019",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2019.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 7.1616,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "investment_002",
+          "question": "What incentives are available to investors in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 6.0759,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 3.6516,
+              "title": "Annual-Report-2021",
+              "filename": "Annual-Report-2021.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2021",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2021.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 3.2996,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_003",
+          "question": "What steps are required to establish a BOI project?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.0906,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 4.0046,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 3.9398,
+              "title": "Annual-Report-2021",
+              "filename": "Annual-Report-2021.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2021",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2021.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "investment_004",
+          "question": "Which infrastructure and logistics opportunities are promoted to investors?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -0.2074,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -0.2997,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -0.5498,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "investment_005",
+          "question": "What risks should a foreign entrepreneur consider before investing in Sri Lanka?",
+          "category": "investment",
+          "expected_sources": [
+            "Board of Investment|BOI",
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 2.9866,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 1.8382,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "agriculture_001",
+          "question": "What factors should be considered before starting an agricultural business in Sri Lanka?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 0.6562,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 0.2719,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Agriculture"
+            ],
+            "returned_authorities": [
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "agriculture_002",
+          "question": "How should a farmer select crops for Sri Lankan growing conditions?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 2.3408,
+              "title": "Google-Drive-1Ca Px2Vuo2Ooklwqggiqhixtjhz8B8Nb",
+              "filename": "google-drive-1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": 1.1889,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "agriculture_003",
+          "question": "What guidance is available on soil and nutrient management?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture",
+            "Food and Agriculture Organization|FAO"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -8.053,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -10.1656,
+              "title": "Google-Drive-12Fjtzhpbfjdm5Nj Meq3Mjd V1Ofodu6",
+              "filename": "google-drive-12fJTZhPBFjDM5Nj_mEq3mJd_v1OFODU6.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=12fJTZhPBFjDM5Nj_mEq3mJd_v1OFODU6&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "agriculture_004",
+          "question": "What opportunities exist for value-added agricultural products?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Department of Agriculture",
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.4021,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 0.2587,
+              "title": "Business-Lanka-2022-Apr",
+              "filename": "business-lanka-2022-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-apr.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -0.0551,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "agriculture_005",
+          "question": "What climate and food-system risks affect Sri Lankan agriculture?",
+          "category": "agriculture",
+          "expected_sources": [
+            "Food and Agriculture Organization|FAO",
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.0889,
+              "title": "Google-Drive-1Ca Px2Vuo2Ooklwqggiqhixtjhz8B8Nb",
+              "filename": "google-drive-1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1CA_px2VUo2ooKlwqGGIQhIXtjHZ8B8NB&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": 3.4207,
+              "title": "Google-Drive-18Ydmidr0Bw1Gdntwhsfshbdk0Yxaczkp",
+              "filename": "google-drive-18YdmiDR0BW1gDNtWhSFSHBdK0YXACZkp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=18YdmiDR0BW1gDNtWhSFSHBdK0YXACZkp&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": 2.9251,
+              "title": "News Survey 2024 02",
+              "filename": "News_Survey_2024_02.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/satahana/News_Survey_2024_02.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "export_001",
+          "question": "Which Sri Lankan products have export potential?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 6.3462,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 6.2973,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "export_002",
+          "question": "What should a new Sri Lankan exporter consider before entering a foreign market?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 3.0786,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 2.7534,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 2.5558,
+              "title": "Business-Lanka-2022-V2",
+              "filename": "business-lanka-2022-v2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2022",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2022-v2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 1.0
+          }
+        },
+        {
+          "id": "export_003",
+          "question": "What export opportunities exist for rubber and polymer products?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 5.574,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "export_004",
+          "question": "What customs information is important when planning imports or exports?",
+          "category": "export",
+          "expected_sources": [
+            "Sri Lanka Customs|Customs"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -0.0098,
+              "title": "Investor-Services-Brochure",
+              "filename": "Investor-Services-Brochure.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Investor-Services-Brochure.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -0.479,
+              "title": "Business-Lanka-2021-Apr",
+              "filename": "business-lanka-2021-apr.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2021",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2021-apr.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Sri Lanka Customs|Customs"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Sri Lanka Export Development Board"
+            ]
+          }
+        },
+        {
+          "id": "export_005",
+          "question": "Which services and knowledge industries have export potential?",
+          "category": "export",
+          "expected_sources": [
+            "Export Development Board|EDB",
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.925,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 2.1561,
+              "title": "Business-Lanka-2023-2",
+              "filename": "business-lanka-2023-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "statistics_001",
+          "question": "How can population and employment data support business decisions?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -8.4011,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -9.4121,
+              "title": "Central Banks Policy Agenda For 2026 And Beyond E",
+              "filename": "central_banks_policy_agenda_for_2026_and_beyond_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/about/central_banks_policy_agenda_for_2026_and_beyond_e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -9.5035,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_002",
+          "question": "What demographic data should be reviewed before opening a regional business?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -6.672,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_003",
+          "question": "How can labour-force statistics help with workforce planning?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -5.4958,
+              "title": "Google-Drive-16Hex2Q68Qyic-Kwdo3Bmdeftrr-Tcwqd",
+              "filename": "google-drive-16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=16heX2Q68qYic-kwDO3BmDeFTRr-TcwQD&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -6.0709,
+              "title": "Fssr 2023E",
+              "filename": "fssr_2023e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Financial Stability",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/publications/fssr/fssr_2023e.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -7.4863,
+              "title": "Annual-Report-2018",
+              "filename": "Annual-Report-2018.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2018",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2018.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_004",
+          "question": "What regional indicators help estimate local market demand?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -6.2245,
+              "title": "Google-Drive-1Uztf-Ut7L4Tpx-Grqta8E Rrpcr 5Khp",
+              "filename": "google-drive-1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Uztf-Ut7l4TPX-gRqTA8e_rrpCr_5kHP&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": -6.6207,
+              "title": "Google-Drive-1Duhyacrlh7Tzepzkx Hety4E792Ojscj",
+              "filename": "google-drive-1DUhyacRlH7TzepzkX_hEtY4e792OJsCj.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1DUhyacRlH7TzepzkX_hEtY4e792OJsCj&export=download&confirm=t"
+            },
+            {
+              "rank": 3,
+              "score": -9.0048,
+              "title": "Press 20260817 Land Valuation Indicator First Half Of 2026 E",
+              "filename": "press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "General",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/press/pr/press_20260817_land_valuation_indicator_first_half_of_2026_e.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Department of Census and Statistics|DCS"
+            ],
+            "returned_authorities": [
+              "Central Bank of Sri Lanka",
+              "Department of Agriculture Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "statistics_005",
+          "question": "Which official statistics describe Sri Lanka's agriculture sector?",
+          "category": "statistics",
+          "expected_sources": [
+            "Department of Census and Statistics|DCS",
+            "Department of Agriculture"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 4.7318,
+              "title": "Google-Drive-1Re1Hxgfmdlmvubi504Doa-Cz2Zbik5Yp",
+              "filename": "google-drive-1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1Re1hxGfmDlmvUBI504dOa-Cz2zbIk5yp&export=download&confirm=t"
+            },
+            {
+              "rank": 2,
+              "score": 3.8641,
+              "title": "Google-Drive-1Kfb59W-Lnrosjqxquufdmytcscogm8Az",
+              "filename": "google-drive-1KFb59W-lNROsjqxquUfdmytCsCogm8AZ.pdf",
+              "source": "Department of Agriculture Sri Lanka",
+              "category": "Agriculture",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://drive.usercontent.google.com/download?id=1KFb59W-lNROsjqxquUfdmytCsCogm8AZ&export=download&confirm=t"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "tourism_001",
+          "question": "What is the outlook for Sri Lanka's tourism sector?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 6.2428,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 5.2271,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            },
+            {
+              "rank": 3,
+              "score": 4.9147,
+              "title": "Business-Lanka-2025-1",
+              "filename": "business-lanka-2025-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-1.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "precision_at_3": 0.6667
+          }
+        },
+        {
+          "id": "tourism_002",
+          "question": "What opportunities exist in nautical tourism in Sri Lanka?",
+          "category": "tourism",
+          "expected_sources": [
+            "Export Development Board|EDB"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 7.8986,
+              "title": "Business-Lanka-2023-1",
+              "filename": "business-lanka-2023-1.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2023",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2023-1.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        },
+        {
+          "id": "tourism_003",
+          "question": "What economic indicators should a tourism investor monitor?",
+          "category": "tourism",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": -1.6819,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -2.2584,
+              "title": "Annual-Report-2020",
+              "filename": "Annual-Report-2020.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2020",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2020.pdf"
+            },
+            {
+              "rank": 3,
+              "score": -4.3275,
+              "title": "Annual-Report-2017",
+              "filename": "Annual-Report-2017.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Annual Report",
+              "published_date": "2017",
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Annual-Report-2017.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Central Bank of Sri Lanka|CBSL"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "tax_001",
+          "question": "What tax information should a new Sri Lankan business verify?",
+          "category": "tax_and_compliance",
+          "expected_sources": [
+            "Inland Revenue Department|IRD"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 1.3275,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": -2.6222,
+              "title": "Banks",
+              "filename": "banks.pdf",
+              "source": "Central Bank of Sri Lanka",
+              "category": "Banking",
+              "document_type": "Report",
+              "published_date": null,
+              "document_url": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/banks.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": false,
+            "first_relevant_rank": null,
+            "reciprocal_rank": 0.0,
+            "precision_at_3": 0.0
+          },
+          "failure": {
+            "type": "expected_source_not_retrieved",
+            "expected_sources": [
+              "Inland Revenue Department|IRD"
+            ],
+            "returned_authorities": [
+              "Board of Investment of Sri Lanka",
+              "Central Bank of Sri Lanka"
+            ]
+          }
+        },
+        {
+          "id": "cross_domain_001",
+          "question": "Explain Sri Lanka's business environment to a foreign entrepreneur using economic and investment evidence.",
+          "category": "cross_domain",
+          "expected_sources": [
+            "Central Bank of Sri Lanka|CBSL",
+            "Board of Investment|BOI"
+          ],
+          "retrieved_sources": [
+            {
+              "rank": 1,
+              "score": 5.6749,
+              "title": "Sampath-Bank-Book-Guide",
+              "filename": "Sampath-Bank-Book-Guide.pdf",
+              "source": "Board of Investment of Sri Lanka",
+              "category": "Investment",
+              "document_type": "Guide",
+              "published_date": null,
+              "document_url": "https://investsrilanka.com/wp-content/uploads/2025/07/Sampath-Bank-Book-Guide.pdf"
+            },
+            {
+              "rank": 2,
+              "score": 4.7691,
+              "title": "Business-Lanka-2025-2",
+              "filename": "business-lanka-2025-2.pdf",
+              "source": "Sri Lanka Export Development Board",
+              "category": "Exports and Trade",
+              "document_type": "Report",
+              "published_date": "2025",
+              "document_url": "https://www.srilankabusiness.com/ebooks/business-lanka-2025-2.pdf"
+            }
+          ],
+          "metrics": {
+            "hit_at_3": true,
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "precision_at_3": 0.3333
+          }
+        }
+      ]
+    }
+  },
+  "answer_quality": {
+    "graded_answers": 0,
+    "status": "not_run"
+  }
+}

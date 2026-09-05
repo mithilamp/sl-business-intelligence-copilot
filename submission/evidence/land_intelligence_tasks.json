@@ -1,0 +1,8 @@
+[
+  {"id":"land_001","task":"Extract property, boundary, area, road and location evidence from a clear land-plan image.","expected_stages":["parser","vision_extraction","location_normalization","geolocation","nearby_intelligence","business_analysis"]},
+  {"id":"land_002","task":"Process a multi-page PDF and preserve a page-level analysis for every page.","expected_stages":["parser","vision_extraction","business_analysis"]},
+  {"id":"land_003","task":"Handle a document with no usable location without inventing coordinates.","expected_behaviour":["analysis_returned","geolocation_omitted","uncertainty_reported"]},
+  {"id":"land_004","task":"Distinguish a broad district fallback from a precise local geocode.","expected_behaviour":["match_quality_reported","confidence_reported","location_level_reported"]},
+  {"id":"land_005","task":"Rank and display nearby roads, banks, hospitals, schools, hotels and businesses by distance.","expected_behaviour":["nearby_details_present","distance_meters_present","legacy_names_preserved"]},
+  {"id":"land_006","task":"Produce a tourism-development assessment that separates observed evidence, inferred opportunities, risks and verification gaps.","expected_stages":["vision_extraction","geolocation","nearby_intelligence","business_analysis"]}
+]
