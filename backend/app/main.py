@@ -10,6 +10,10 @@ app = FastAPI(
     title=settings.PROJECT_NAME
 )
 
+settings.RAW_DATA_DIR.mkdir(
+    parents=True,
+    exist_ok=True,
+)
 
 app.mount(
     "/documents",
@@ -20,9 +24,7 @@ app.mount(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-    ],
+    allow_origins=settings.cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
